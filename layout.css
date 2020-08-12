@@ -1,0 +1,448 @@
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+        
+        .menu {
+            padding: 0.2em 0.5em;
+            margin: 2em 0;
+            background: #ffeaea;
+            box-shadow: 0px 0px 0px 10px #ffeaea;
+            border: dashed 2px #ffc3c3;
+            border-radius: 8px;
+            height: 80px;
+            width: 900px;
+            text-align: center;
+            color: #bb99ff;
+            clear: both;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        .menu li {
+            float: left;
+            list-style-type: none;
+            margin: auto;
+        }
+        /*メニューボックス*/
+        
+        #srap {
+            margin: 0 auto;
+            width: 900px;
+            font-family: 'Arial', YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ ゴシック', sans-serif;
+        }
+        /*ホームページ幅・フォント指定*/
+        
+        .title-wrapper {
+            display: block;
+            position: relative;
+            margin: 5px auto;
+            padding: 10px 0;
+            width: 500px;
+            background: #00000000;
+        }
+        
+        .title {
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 0 0 0 -20px;
+            width: calc(100% + 20px);
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            color: #474747;
+            background: #b0e0e6;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .title:before {
+            position: absolute;
+            content: '';
+            top: 100%;
+            left: 0;
+            border: none;
+            border-bottom: solid 15px transparent;
+            border-right: solid 20px #6081b7;
+        }
+        /*ページタイトル用*/
+        
+        .mainmenu {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bolder;
+        }
+        
+        .mainmenu .bar {
+            width: 300px;
+            height: 50px;
+            margin: 10px 0;
+        }
+        
+        .mainmenu .bar {
+            animation: show-bar .3s linear .9s forwards;
+        }
+        
+        @keyframes show-bar {
+            from {
+                width: 0;
+                background-color: #eee;
+            }
+            to {
+                width: 330px;
+                background-color: #0000cd;
+            }
+        }
+        /*ホームメニューバー*/
+        
+        .mainmenu_title {
+            color: #ffffff;
+            opacity: 0;
+        }
+        
+        .mainmenu_title {
+            -webkit-animation: example 1s ease 0s 1 forwards;
+            animation: example 1s ease 0s 1 forwards;
+        }
+        
+        @-webkit-keyframes example {
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes example {
+            100% {
+                opacity: 1;
+            }
+        }
+        /*メインメニューのテキスト表示*/
+        
+        .footer {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #5989cf;
+            background: #c6e4ff;
+            border-bottom: solid 6px #aac5de;
+            border-radius: 9px;
+            text-align: right;
+        }
+        /*フッター・著作権表示用*/
+        
+        .btn-manage {
+            display: inline-block;
+            font-weight: bold;
+            text-decoration: none;
+            color: #66cdaa;
+            background: #ECECEC;
+            transition: .4s;
+        }
+        
+        .btn-manage:hover {
+            background: #66cdaa;
+            color: white;
+        }
+        /*戻るボタン*/
+        
+        .hidden_box {
+            margin: 2em 0;
+            padding: 0;
+        }
+        
+        .hidden_box label {
+            padding: 15px;
+            font-weight: bold;
+            background: #ffebcd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .5s;
+        }
+        
+        .hidden_box label:before {
+            display: inline-block;
+            content: '▽';
+            font-family: 'FontAwesome';
+            padding-right: 5px;
+            transition: 0.5s;
+        }
+        
+        .hidden_box label:hover {
+            background: #f0ffff;
+        }
+        
+        .hidden_box input:checked~label:before {
+            content: '✖';
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+            color: #668ad8;
+        }
+        
+        .hidden_box input {
+            display: none;
+        }
+        
+        .hidden_box .hidden_show {
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: 0.8s;
+        }
+        /*投書箱やリンク集などのメニューバーをしまっておくための箱*/
+        
+        .home_btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #87befd;
+            color: #FFF;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0px 0px 0px 5px #87befd;
+            border: dashed 2px #FFF;
+            transition: .4s;
+            position: fixed;
+            right: 30px;
+            bottom: 50px;
+            transition: 1s;
+            opacity: 0.8;
+            z-index: 10;
+        }
+        
+        .home_btn:hover {
+            background: #668ad8;
+            box-shadow: 0px 0px 0px 5px #668ad8;
+            opacity: 1;
+        }
+        /*ホームボタン*/
+        
+        .header {
+            height: 20px;
+            width: 500px;
+            text-align: left;
+            font-size: 0.85em;
+            padding: 0.5em;
+            color: #010101;
+            background: #eaf3ff;
+            border-bottom: solid 3px #516ab6;
+        }
+        /*ヘッダー・タイトルに使用*/
+        
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+        
+        img {
+            filter: grayscale(30%);
+        }
+        /*リンク等の下線削除*/
+        
+        .btn-text-3d {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 40px;
+            color: #006400;
+            text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #ffffff, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+        }
+        
+        .btn-text-3d:active {
+            top: 4px;
+            text-shadow: none;
+        }
+        
+        .btn-box {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            width: 200px;
+            margin: auto;
+            text-align: center;
+            color: #ffdead;
+            background: #ffdead;
+            /*背景色*/
+            border-top: solid 6px #ff8c00;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+            /*影*/
+        }
+        
+        .btn-box p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .btn-top {
+            display: inline-block;
+            position: relative;
+            padding: 0.35em 1em;
+            background: #668ad8;
+            /*ボタン色*/
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        
+        .btn-top:before {
+            content: "";
+            position: absolute;
+            top: -16px;
+            left: 0;
+            width: -webkit-calc(100% - 16px);
+            width: calc(100% - 16px);
+            height: 0;
+            border: solid 8px transparent;
+            border-bottom-color: #8eacec;
+            /*ボタン色より明るめの色に*/
+        }
+        
+        .btn-top:active {
+            /*押したとき*/
+            padding: 0.32em 0.9em;
+            -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+        }
+        
+        .btn-top:active:before {
+            width: -webkit-calc(100% - 12px);
+            width: calc(100% - 12px);
+        }
+        
+        .btn-top:active:before {
+            top: -12px;
+            border-width: 6px;
+        }
+        
+        .box-top {
+            text-decoration: none;
+            margin: 2em 0;
+            position: relative;
+            padding: 0.25em 1em;
+            border: solid 2px #ffcb8a;
+            border-radius: 3px 0 3px 0;
+            width: 800px;
+            text-align: center;
+        }
+        
+        .box-top:before,
+        .box-top:after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: solid 2px #ffcb8a;
+            border-radius: 50%;
+        }
+        
+        .box-top:after {
+            top: -12px;
+            left: -12px;
+        }
+        
+        .box-top:before {
+            bottom: -12px;
+            right: -12px;
+        }
+        /*乱数生成ボタン*/
+        
+        .btn-ransu {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 20px;
+            overflow: hidden;
+            font-weight: bold;
+            background: #9acd32;
+        }
+        
+        .hidden_box input:checked~.hidden_show {
+            padding: 10px 0;
+            height: auto;
+            opacity: 1;
+        }
+        /*スマートフォンやタブレットのプルダウンデザインの無効化*/
+        
+        select {
+            -webkit-appearance: none;
+        }
+        /*乱数生成のフォントサイズ指定*/
+        
+        #ransu {
+            font-size: 200px;
+        }
+        /*プルダウン*/
+        
+        .number {
+            overflow: hidden;
+            width: 90%;
+            margin: 2em auto;
+            text-align: center;
+        }
+        
+        .number select {
+            width: 100%;
+            padding-right: 1em;
+            cursor: pointer;
+            text-indent: 0.1px;
+            text-overflow: ellipsis;
+            border: none;
+            outline: none;
+            background: transparent;
+            background-image: none;
+            box-shadow: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .number select::-ms-expand {
+            display: none;
+        }
+        
+        .number.cp_sl05 {
+            position: relative;
+            border-radius: 2px;
+            border-radius: 50px;
+            background: #ff8c00;
+        }
+        
+        .number.cp_sl05::before {
+            position: absolute;
+            top: 0.8em;
+            right: 0.8em;
+            width: 0;
+            height: 0;
+            padding: 0;
+            content: '';
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #ffffff;
+            pointer-events: none;
+        }
+        
+        .number.cp_sl05 select {
+            padding: 8px 38px 8px 8px;
+            color: #000000;
+        }

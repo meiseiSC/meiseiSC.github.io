@@ -1,0 +1,58 @@
+/*以下は電卓用のスタイルシート*/
+
+input[type=button] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+.dentaku-base {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 8px;
+    background-color: none;
+    overflow: hidden
+}
+
+.dentaku {
+    width: 450px;
+    margin: 0 auto;
+    background-color: #ddd;
+    border: solid 1px #000;
+    overflow: hidden;
+}
+
+.dentaku table {
+    width: 100%
+}
+
+.dentaku table tr td {
+    vertical-align: middle
+}
+
+.btn {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    margin: 0 auto;
+}
+
+.btn-calc {
+    background-color: #6495ed;
+    color: #fff
+}
+
+.display {
+    width: 480px;
+    height: 100px;
+    font-size: 50px;
+    padding: 0 4px;
+    text-align: right;
+    background-color: #000000;
+    color: #ffffff;
+    display: table-cell;
+    vertical-align: bottom
+}

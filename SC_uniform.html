@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="layout.css" type="text/css">
+    <link rel="stylesheet" href="background2.css" type="text/css">
+    <link rel="stylesheet" href="menu_bar1.css" type="text/css">
+    <link rel="stylesheet" href="menu_all.css" type="text/css">
+    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>生徒会/生活委員会</title>
+    <link rel="shortcut icon" href="icon/webclip-meisei.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-128.ico">
+</head>
+
+<body>
+    <div class='wave -one'></div>
+    <div class='wave -two'></div>
+    <div class='wave -three'></div>
+
+    <div id="srap">
+        &nbsp;
+        <!--以下は明星中学・高等学校のロゴ兼リンク-->
+        <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
+            <img src="icon/logo_hs.svg" width="300">
+        </a>
+        &nbsp;
+        <!--以下はタイトル-->
+        <div class="title-wrapper">
+            <div class="title">
+                <div class="bounceInDown">
+                    制服の着こなし方(動画)
+                </div>
+            </div>
+        </div>
+        &nbsp;
+        <!--以下は動画欄-->
+        <div class="header">
+            制服の着こなし方(高校・新制服)
+        </div>
+        &nbsp;
+        <video-js id=example-video width=640 height=360 class="vjs-default-skin" controls>
+            <source src="hls/uniform_hs_all/uniform_hs_all.m3u8" type="application/x-mpegURL">
+        </video-js>
+        <script src="https://vjs.zencdn.net/7.4.1/video.js"></script>
+        <script>
+            var player = videojs('example-video');
+        </script>
+        &nbsp;
+        <!--以下はヘッダー-->
+        <div class="footer">
+            ©2019-2020 Kota Misu/高校生活委員会
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(function() {
+        var aTags = $('a');
+        aTags.each(function() {
+            var url = $(this).attr('href');
+            $(this).removeAttr('href');
+            $(this).click(function() {
+                location.href = url;
+            });
+        });
+    });
+</script>
+
+</html>

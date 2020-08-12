@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../layout.css" type="text/css">
+    <link rel="stylesheet" href="../background1.css" type="text/css">
+    <link rel="stylesheet" href="../E-book.css" type="text/css">
+    <script type="text/javascript" src="../extras/jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="../extras/modernizr.2.5.3.min.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>2018明星祭</title>
+    <link rel="shortcut icon" href="../icon/webclip-meisei.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="../icon/apple-touch-icon-128.ico">
+</head>
+
+<body>
+    <div id="srap">
+        <div class="menu__toggler"><span></span></div>
+        <a href="pamphlet.html">
+            <div class="btn-return">
+                ☜戻る
+            </div>
+        </a>
+        <br>
+        <br>
+        <div class="flipbook-viewport">
+            <div class="container">
+                <div class="flipbook">
+                    <div style="background-image:url(2018/hyousi.jpg)"></div>
+                    <div style="background-image"></div>
+                    <div style="background-image:url(2018/2018-01.jpg)"></div>
+                    <div style="background-image:url(2018/2018-02.jpg)"></div>
+                    <div style="background-image:url(2018/2018-03.jpg)"></div>
+                    <div style="background-image:url(2018/2018-04.jpg)"></div>
+                    <div style="background-image:url(2018/2018-05.jpg)"></div>
+                    <div style="background-image:url(2018/2018-06.jpg)"></div>
+                    <div style="background-image:url(2018/2018-07.jpg)"></div>
+                    <div style="background-image:url(2018/2018-08.jpg)"></div>
+                    <div style="background-image:url(2018/2018-09.jpg)"></div>
+                    <div style="background-image:url(2018/2018-10.jpg)"></div>
+                    <div style="background-image:url(2018/2018-11.jpg)"></div>
+                    <div style="background-image:url(2018/2018-12.jpg)"></div>
+                    <div style="background-image:url(2018/2018-13.jpg)"></div>
+                    <div style="background-image:url(2018/2018-14.jpg)"></div>
+                    <div style="background-image:url(2018/2018-15.jpg)"></div>
+                    <div style="background-image:url(2018/2018-16.jpg)"></div>
+                    <div style="background-image:url(2018/2018-17.jpg)"></div>
+                    <div style="background-image:url(2018/2018-18.jpg)"></div>
+                    <div style="background-image:url(2018/2018-19.jpg)"></div>
+                    <div style="background-image:url(2018/2018-20.jpg)"></div>
+                    <div style="background-image:url(2018/2018-21.jpg)"></div>
+                    <div style="background-image:url(2018/2018-22.jpg)"></div>
+                    <div style="background-image:url(2018/2018-23.jpg)"></div>
+                    <div style="background-image:url(2018/2018-24.jpg)"></div>
+                    <div style="background-image:url(2018/2018-25.jpg)"></div>
+                    <div style="background-image:url(2018/2018-26.jpg)"></div>
+                    <div style="background-image:url(2018/2018-27.jpg)"></div>
+                    <div style="background-image:url(2018/2018-28.jpg)"></div>
+                    <div style="background-image:url(2018/2018-29.jpg)"></div>
+                    <div style="background-image:url(2018/2018-30.jpg)"></div>
+                    <div style="background-image:url(2018/2018-31.jpg)"></div>
+                    <div style="background-image:url(2018/2018-32.jpg)"></div>
+                    <div style="background-image:url(2018/2018-33.jpg)"></div>
+                    <div style="background-image:url(2018/2018-34.jpg)"></div>
+                    <div style="background-image:url(2018/2018-35.jpg)"></div>
+                    <div style="background-image:url(2018/2018-36.jpg)"></div>
+                    <div style="background-image"></div>
+                    <div style="background-image:url(2018/2018-37.jpg)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
+    <script>
+        $(function() {
+            var aTags = $('a');
+            aTags.each(function() {
+                var url = $(this).attr('href');
+                $(this).removeAttr('href');
+                $(this).click(function() {
+                    location.href = url;
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        const toggler = document.querySelector('.menu__toggler');
+        const menu = document.querySelector('.menubar');
+
+        toggler.addEventListener('click', () => {
+            toggler.classList.toggle('active');
+            menu.classList.toggle('active');
+        })
+
+        function loadApp() {
+
+
+            $('.flipbook').turn({
+                height: 650,
+                width: 650 * 1.41,
+            });
+        }
+
+        yepnope({
+            test: Modernizr.csstransforms,
+            yep: ['../lib/turn.js'],
+            nope: ['../lib/turn.html4.min.js'],
+            both: ['../pamphlet.css'],
+            complete: loadApp
+        });
+    </script>
+
+</body>
+
+<script>
+    //背景(canvas)
+    var livePatern = {
+        canvas: null,
+        context: null,
+        cols: 0,
+        rows: 0,
+        colors: [252, 251, 249, 248, 241, 240],
+        triangleColors: [],
+        destColors: [],
+
+        init: function() {
+            this.canvas = document.getElementById('canvas');
+            this.context = this.canvas.getContext('2d');
+            this.cols = Math.floor(document.body.clientWidth / 24);
+            this.rows = Math.floor(document.body.clientHeight / 24) + 1;
+
+            this.canvas.width = document.body.clientWidth;
+            this.canvas.height = document.body.clientHeight;
+
+            this.drawBackground();
+            this.animate();
+        },
+
+        drawTriangle: function(x, y, color, inverted) {
+            inverted = inverted == undefined ? false : inverted;
+
+            this.context.beginPath();
+            this.context.moveTo(x, y);
+            this.context.lineTo(inverted ? x - 22 : x + 22, y + 11);
+            this.context.lineTo(x, y + 22);
+            this.context.fillStyle = "rgb(" + color + "," + color + "," + color + ")";
+            this.context.fill();
+            this.context.closePath();
+        },
+
+        getColor: function() {
+            return this.colors[(Math.floor(Math.random() * 6))];
+        },
+
+        drawBackground: function() {
+            var eq = null;
+            var x = this.cols;
+            var destY = 0;
+            var color, y;
+
+            while (x--) {
+                eq = x % 2;
+                y = this.rows;
+
+                while (y--) {
+                    destY = Math.round((y - 0.5) * 24);
+
+                    this.drawTriangle(x * 24 + 2, eq == 1 ? destY : y * 24, this.getColor());
+                    this.drawTriangle(x * 24, eq == 1 ? destY : y * 24, this.getColor(), true);
+                }
+            }
+        },
+
+        animate: function() {
+            var me = this;
+
+            var x = Math.floor(Math.random() * this.cols);
+            var y = Math.floor(Math.random() * this.rows);
+            var eq = x % 2;
+
+            if (eq == 1) {
+                me.drawTriangle(x * 24, Math.round((y - 0.5) * 24), this.getColor(), true);
+            } else {
+                me.drawTriangle(x * 24 + 2, y * 24, this.getColor());
+            }
+
+            setTimeout(function() {
+                me.animate.call(me);
+            }, 10);
+        },
+    };
+
+    ! function() {
+        livePatern.init();
+    }()
+</script>
+
+</html>

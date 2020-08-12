@@ -1,0 +1,61 @@
+/*背景*/
+
+.background {
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*電子本レイアウト*/
+
+.flipbook-viewport {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flipbook-viewport .container {
+    position: absolute;
+    margin: auto;
+}
+
+.flipbook-viewport .page {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.flipbook-viewport .page img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: auto;
+}
+
+
+/*戻るボタン*/
+
+.btn-return {
+    position: fixed;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #c71585;
+    background: #ECECEC;
+    transition: .4s;
+}
+
+.btn-return:hover {
+    background: #c71585;
+    color: white;
+}

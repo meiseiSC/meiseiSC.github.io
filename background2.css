@@ -1,0 +1,43 @@
+/*背景*/
+
+.wave {
+    opacity: 0.5;
+    position: fixed;
+    background: #0af;
+    width: 1000px;
+    height: 1000px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: -1;
+}
+
+.wave.-three {
+    animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: 0.5;
+    background: yellow;
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*HPのダークテーマ対応*/
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+    }
+}

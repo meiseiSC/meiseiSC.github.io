@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="layout.css" type="text/css">
+    <link rel="stylesheet" href="background2.css" type="text/css">
+    <link rel="stylesheet" href="menu_bar1.css" type="text/css">
+    <link rel="stylesheet" href="menu_all.css" type="text/css">
+    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>生徒会/生活委員会</title>
+    <link rel="shortcut icon" href="icon/webclip-meisei.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-128.ico">
+</head>
+
+<body>
+    <div class='wave -one'></div>
+    <div class='wave -two'></div>
+    <div class='wave -three'></div>
+    <!--共通メニューバー-->
+    <header class="main_menu">
+        <div class="burger">
+            <div class="burger__patty"></div>
+            <div class="burger__patty"></div>
+            <div class="burger__patty"></div>
+        </div>
+
+        <nav class="menu_all">
+            <div class="menu_all__brand">
+                <div class="logo"><img src="icon/meisei.png"></div>
+            </div>
+            <ul class="menu_all__list">
+                <li class="menu_all__item">
+                    <a href="SC1_tousyo.html" class="menu_all__link">
+                    投書箱
+                </a>
+                </li>
+                <li class="menu_all__item">
+                    <a href="SC1_radio.html" class="menu_all__link">
+                    明星昼らじ！
+                </a>
+                </li>
+                <li class="menu_all__item">
+                    <a href="SC2_dentaku.html" class="menu_all__link">
+                    WEB電卓
+                </a>
+                </li>
+                <li class="menu_all__item">
+                    <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="menu_all__link">
+                    生徒会新聞
+                </a>
+                </li>
+                <li class="menu_all__item">
+                    <a href="admin.html" class="menu_all__link ">
+                    このサイトについて
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="srap">
+        &nbsp;
+        <!--以下は明星中学・高等学校のロゴ兼リンク-->
+        <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
+            <img src="icon/logo_hs.svg" width="300">
+        </a>
+        &nbsp;
+        <!--以下はタイトル-->
+        <div class="title-wrapper">
+            <div class="title">
+                <div class="bounceInDown">
+                    制服の着こなし方(動画)
+                </div>
+            </div>
+        </div>
+        <!--以下はホームボタン-->
+        <a class="home_btn" href="SC_home.html">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANMAAADTCAYAAAAbBybZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAhdEVYdENyZWF0aW9uIFRpbWUAMjAyMDowMjoyMyAxNzo1NjozNH7e5GoAABxVSURBVHhe7Z1rsBzFdYB79+pxdV966woZARIqCDaFE1PgEFKJnQoUD6eSqlSefmEbYkcCjHkYmzKJBbJ5BuyULOI4NkhQdgHBBY5NUv6TlI1sV7niYNkYPwKSgtEDECAQkq6ku5s5M3Pu9Jzt6Z7Zndk9vXu+qnPvnu4zs6d7+nT39DxWCYIgCIIgCIIgCIIgCILgCbX4v8CQe76wqfnoY19XO3fuVNPT02psbEydfvrp6v4Hvurdcbvk/e9t/s+PfqxeeHGPahw9FqY1VD38r2qN6H8z0kdGh9Xy5cvVH7zzD9Utt90qbVTojNWrTmwOzxrSpNacO1QPP8P/iy+6oBmbsuZtv/XW5pzZejmS8rSmtcq84TnNP/+zP/WirAJDxsdGwgaIwRM1vNbGd/qb38K2kd115z80F8wftwRSdjDNG4oEddgHdC7xrgUhHwvHx1INK5J045s3e1b4H4Lt1FPWsGtk//j5u5vj84a1zoCKPZioYHmPXz7JOqBkPsqE+zdvaV6+9iNqamoqTtGJzynwHEOj2Wyqk1avUb/41S/ZHMuRObObjUbkM/hXq1HXsssDmLeJOGHVSeqXv3qGZbs1l0boOmvXJYFUCxobSB6g0e3c/ox6y5t/g0Wv/c7ff8dMIAHpoIB0EGh22U0v2QbtE3bs2KE23HQzyxGKZYQPGvMnxpqHDh1SQ8HhCHvluAE1ZxocNih733fiqpN7PkINz5nbVI1otQ6BMtXr9eD/dJyStw83l5tDOU3kLZVQAVs239ucPzrSnDp4SNWDvjZqbI0giCCQ8oA9dyQwQvXyHOrj114XFAEDJgFGGgioZhPaPzQ59BmhOo5OYNtqv33HM/EnXkgw9ZAr1q5rOUeCRtcJO5/drladeFJPAmrbk0+SaV0CpGflmbCdNwGwyBF/ZIMEU4+AqZ3pHKlogzOx+/nn1YlvOr7rjW337t3xJyQZUeydBI5AaXAbqBFaK/v3748/8UGCqctsuW9zc2J8NDxHqo6G2rt3b9cD6vDhw/Gn6uh05K4SCaYuc+Xla9WRQ4fDcyQEFhqixQZzD51FrTYU/M2yh4DarVat7GZApc9tsstTrJxJ/RQbubtN/hIJHQMXZLvRe0ODrtWiGIKp18oeTPkGEQmmLgCrdnCLUDK1oz04kpWeRba9Ph16Yc8utfL4FYwCqrxyckKCqQusXbs2486G6sDpEPwHeXFPcA618gQZoSpEgqliYNXu2NSx4BypiqqGfZr3G41MjeB/ct1n7+7n1ZLFCz0MqOxycoK/h56yZcsWMrXjwYH9r6klixbLCFUBEkwVsW7tR9TRw1Pxql3eOX/ZPXC0P1iLiNcjQg689qqaXLakhwFVdjl50H8lYoB+QRbp5vWRPN+1/+VXZIQqGQmmEqH32iUjUrJUbSfvCIaY7em1GLglLrwtboZoOxihFi9a0IOAKqec3JBgKhHTvXbceeO119XyyaUyQpWABFNJ4NSO0+0ujWA0Akkw9/Cv7ntJLVwwIQHVIRJMHQL32umrdpxvd7Fx6MDrYYcQq0IbSDB1yBXr/tayagfVm6eKcbu89ojdHnzS7wF02cO53qKF87sQUHY/Wilq3xv4e8gYuNcOz5E4Te/aBcpw8PUDamJs3P/C9AAJpjbAe+0OHjwYaNGzSEPGmqQjVRbY8+a1R8q1xynqkcOHg46iynOocv3mggRTG6xbF63a6edH/TAy6cA54JIFPt561DskmAoCU7ujh49q5yLwrE0QTPHn/qjS6J6+AwdeUwvGRksPKOiC/FymsSPBlBN4rx1ckI1W7fhPOToFR114/mpkeF4T3nseJliYOzIv/N9vo3ReJJhyor/XLj9FRype9hgUzemj6hOf/Hj4QwJhQgbbfvJUbfHSSevlAdin/uRsPoqWszfw95ABeEE2aSR+nBCXBQQALJtfc8016iv/8mVrQD2/e1dtZHws1lqxBZrvSDBZCC/IjgaBRN5rl5+iQcfHHhp9dD8hPhPVUI1jR9TlV6x1jlAvv7I/HKGyqc7vXiLBZAFX7XQG5XxAL6c+msBvK13/ieucAQUj1OJlS2NtMOpNgikDmNodnQpGJNIj9vM0xYSpvPB2pWuu/Zh7yrdrT210fH74GfaTBBQ0u/5rehJMhO68184P0gGgE0z5ghEKpny333qbNaD2vfJybenSpeG++r0jkmAimN5rl1C0R/XbPnk3eATehR69ry+a8n16/d85f5Xiud17aouWLIs1M/ZpYNFy9gb+HnaR7r3Xzm/0hg8BddNNN6k7brvdGlBwDjU+Ph5rrcHTD6OWBFNAde+140ZR/9P2yV3oUToGBJxXfurGG5wj1IuvvDpzHSp7CmmiqN+9QYIpoBfvtesH9NGk1miqW265xRlQMELhlK/fzqEGPphgands6kiqxy2Povur2r48TIEwfXRK3bxhvbrj9ludAYWrfP3EwAbT/Vvu0+61E4qSNUWDEerGG29UG25ebw0oWOWzX9j1j4ENpmRqFz2PhL+PZAeqq0iVDZp9zLRSn/3Mrerqqz7mHKHyBVSbfnQZ/h5WQPJeuySA8p8MC1noU7/GsWNq48aN6hMfv94ZUHgvn+/HYKCCCS7IwvM5yXvtoh4v/Gg9GS56bjKY9kkwRPpQranuuvtO9bGPXmWNEriXDxYlXAsS3INtoIIJXn5SzXWkKCizceWb0O2LblsUl3+u/FYgMKDxQ6d1zz33qKuu/Kg1Enbt2Z26l88E99W/qo8SG5KpnQlsLFQQl04pmm/SKS77TnRK0fxWewikmcbfOKY23ZNjyqfdy6eDd69Hn/kGlK3G+oLNm9PvtRO6hz4tgxHqrrvuck75wlW+eITCwNH3w3mq1/fBdLnxvXZUKCYbk+iY8nXRMeWbBDHlmQQx5ZlEx5Svi44pXxczcKcEjFBXXn6FNSJghIJVvmR0i0Y+zoEE9HUw2ad2BbG+eD+7ASUQm1wv8i8RBv6HwTDdCM+hPvSBD1p3EF7YnRhPBZCcM/UAvNeu9dco6sEBie54joh6vCSfolXPzB3Utiqj+RZ7ckd2QoZ9CN0f1SlaHgP/IRhAYJXv/gc2q/e++z3WgNr3cnQvny9kl9xj1gVTu6kp8zlS1NNZGkkLVVeRvv8qvoun/9DJPfTQQ86ACi/sOlb5uFB1TXed6L12eI6EQDFtRaX5onemm9F/lSM8H2pOqwcf+pr64CUfsAdUvMqnb88Rdw14AlyQlXvt/AHPf6DTe+CBB9R7/vrd1oAKn9hdwnvK1zfBtO5ymNplLTbgOZFLEFOeSRBTnkkQU55JEFOeSRBTnkkQU55JEFOeLmYgcNLnsBGwyvfwvz6Ya8rHOaD6Iphg1a7yJ2TLXn1jtZrXBiXuD0YpCLIHH3xQ/dVf/KV1xxBQ8MQux2Vyr4NJ/w3ZofDt1faeMSquXmSqU7S8ylbDctqHtGMfw8J/JG0HgQECI9QjX39YveviC62RAqt8S5ctjzU+QI14SxhIwdQuPJkNl12jg5KABwwDTNfpQdfTTPaALzoAaWXtr6ieDzhmdIQJA6teU+eff7765rf+3av26W0whRdkgxEJDiQWIjksxQ5q/wDlxobNmXzBd8HFF6lHH/s3b9qod61u8733pX5oTIf2cgJPcCXPxeOPP+6c8nHCu5EJp3YRrl4Y+4q8vXWn9q7tu+UPkGebqvzX/TBBvy8buK7ky5TPXRpG6L8hK9jIE0h+AKt83/72t9Wf/PEfsR+hvAim9HvtoKGggPt6EahOqdqe4rKn+b22p7jsab7LHslrFwEBBVO+3z33HNYB5cU0L7xpNRiR6k3a4+IBwXTRI3qtVwNM+c4++2z1xNbvs2y37IMpWbUDsg5adw6mUBb5j1d02QMHpHoYUOeee676z//6Dru2y7b1wROyY6Pz5F67AYeu/MGU7/tPbGU55WM7MsHUDu7+ji7swS/XmcgaoRDMp+lZdGrv2r5Texed2hf1J8se07Og22cB+Y1kZAqGpfDGi+ijOuuss9TW7/2ATRt2laYn6E/Imq6QC/1NMhpFQQc/bYPHHeMKRqgf/vCH6p3v+D02DYJVMMGqXfq9dhR8Uhbc1l2HSgeh6RSaX7Y9pWx7ml+2PaUqe7uducOsh6MSjkwAtJGtW7eqc3/nt1kEFJshEkhfkNVxTQtovugRvdLLwrzfaFEiabow5TvttNPUj7f9tKftmU0w6ffaJeQ9OPo2QNkHVSiXosHXao8Bhf+nVVOdccYZ6r9/9GTP2nTPWx08IZu+IFuUdrYRfAdHJvwPj+Bs27ZNvfWM03s25ev5yKRP7VofoSgAnJnqE+oQ7CvyBpzY28lrj3ZZ4PYuOyS/fS+nfHlLUwn0Xru2A0kQYmBR4uc//7k6822/2fXG1JNgovfaZf8+Erinu2jSY8JRieZTTNuLfULV9kheO6SYPfzg2lPbftL1KV9PpnkQSPDOhqH4cT50orXkWIF0mBc9gqveHeiqHgWmfKeccor66VNPd6Wddz2YYGrnvkWo6MHpzcEU2qXq45vYQ0CtWrVK/eKX/1t5W+9a68OXn8i9dkI3gXOo7du3q5NXn1T5lK9rIxPeaxeBPUfVYF+R9/vE3k5ee7TLArd32SGd28MItXLlSvXMszsqa/N5veuI6L128M4Gj5l5DMBTfPe/Q2CEeu6559Spp6yprCIqDSZctYvea6f/+gQCX6+7ULZOacc+xtvVwhgW/ncLsx8zU75VqysJqEqneWEgTU2FS5Ww6gISXUuiw7DoEf2iu6ja3s500LGccMIJ6pntz5ba/isLJvsTsq7KyVt5aIeUU9ndo9xG0n3a9b/odsXs4fm3aMk82x7OoVasWKF27HyutBgo/Sim32uXRu5wELpBMgPKBqZ8e57fpY5bvqy0Rln6yFTsvXZVQ/sKlz9on9fvbtkjvvhP/abg9i47pFx7/TZOGKEWL16sdu95oeNYyOtdLuS9doIv4OImjFD79u1TK49f0fEIVUowpe+1A6BnAIHd61/RbR3J6w+Fi73v/ncbux8wKuHIBEBAvbhnr3rTZGdTvo6HNgBX7cCpCDjwABZI9IhB0V1UbZ8P07kVTPme39velK/jYErfa5dVaD8rW6iKbrUHpFi7WLp8Uj33612FY6Pt1gdPyE6MyHvthP4DpnyLFs4vPOVre2SCqR2+107F77XL/naMWdpjVE3R7xV7O3nt0S4L3N5lhxSzb9Qi+3qz2P7hlWLR9amIsbEx9dKr+3PHSN5vSyHvtRP6AT1wgBkd7tgJmvGBAwfU5OJFuRt0oWDKeq8dfIxUfK8dArsHgcgHQR2pWqeIfW/tkbx2SDF7GJHyjEpJx0/2X6/NrPbt379fLVwwkSugcg9hQP732nHQ8TOip7WzPyBLpxTNN+l0Wz0tz/ZAXp1SNN9l7xd0lQ8u7MKU7+VX7FO+3MFkv9fOBTd7obf4134goCYmJtRL+17JjBnnt8GvUaQvyArC4AGnNa4pn3NkwlU7oKP32vUE7Cuw53HRrj3g2qaILeKr/7qtCdzeZYcUtS9K9v5NU765c+eq1w8cbIkdq3f6qh0w0Ct11idVXY0LIDbW/VWA7/73iEYjXW4YoSAmIDbipBmMwaQ/Iauv2kXm+ibcdUo79jHh8k4eez3fYj+zP0qGfQjdH9UpWh4L/xHLfo0UtS9K6/5xmdy0fA4xAac9ECMQK3GWeZoHRtF77YzZARitugOQhjrNFz1iUPTBgE75WqKlnPfadVrZVdsLvYVbe2jXPvgURNC8eaNq/2sHaqmtj1u6xPiErCAIZmDKBzEzuWwJXudV6sN/c2lz81fujbUk8vwG+4q85RF7O3nt0S4L3N5lh/Tanua32sMINRNMsH5+8PUD8QkXGhcAVneS2GQCLbwLi72xfB3sP1d9+eo/2mWB3+eyQ3ptT/Nb7WGle6Y25sweaiYrd2hMMe1Mt836Mp91/AyUsT+gmzp+BsrYH+DSB4swkGCVL9Y7oB8rUC+Tj+Xz3X8/wOuuM8vo4d+A9MjkwtUTddpzVW2fBWyP+/IRX/zn1h46s2/CXeZBYM1sPTw8HH8SBKEI8MZiYCaYzj/vguCvHpkQfVmCmPJAkCzdLsltS6Y8eKqXpiN5022CmPKoIFk6FcSUZxLElAeCJGm07sz1hYKY8kyCmPJ06S6t7QXasd6WzdC7G7JJlwu2CoXM5FJ7Wzg+Ed75kByA3gEVlL+wWWCF5i1Lp/aanmP1DMqXNAQTLn8s32+g9ftc+6fktUe7LKi/Lorau2ltX/Adtv2n88OfjW3WZw7xnHnD6WD6/N2fa27cuDGwROd7CyzVwwsCk3dHU7BwtLL906ODi08pl7v/1ndvl7v/Vr165s+fryYWLIqUuL22BAg+bYvtOdZr9aZ644031JGpY+m2bno6l+bHevRjFNHxqtfr6rrrr08HEzc2fu7u5rXXXhtrjbCi7D1rv+oApOXfvsrgdOvVA+1iw623sWq/3St9G8wZHgmvLEcEQ2o4poLLKFnQ/N7qtaBHiwQ+Q0o6v1GD316Nfn81klgPbKZVcyZN/4z2UVpah32b38WBVK27gODDAMxD2h7KOXdkXqzxoUgN9AbT0Osx9DQKllXXrFmjLr30UrVp0yZ15Oh0bUaOHa0dPdaY0fXPetr69evVhRdeqBYuXJie5hDSo7rf2MrZK3i3VJif6nPWmR6KCpI3PUsQU55JkCw9lrgceiDVZ89SF1z0LjV15FjtZ0//orbpni/WLr3sw221kE/e8KnaY9/4Zm3vCy/VPr3+ZrVi5fFh7w1PRut+gJ5OQxIbuyBZOk2vDo4dQ391+4zBQw+NfHLFcergoanao994rPTu9YYbbqg9u31n7bLLLounxemGR58cFcrDk2DCHg/c1V126ZSq7RG0iyS6Nh5t9/a3v13t/L9flx5ElC9s+qfal758rxqdmB+MRnD+FPlgnx4lfkZQ3UVe+6r221v4e9gHwMgAI9KZZ5+lvvvE9yoPJOS9739fbd/Lr9ZGRkbiFEAOeVV4UrO0Z6I6xWVftZ4GFhlWrlyptn7vB10LJJ2/v2l9GMwJLv871V24zq1ovsueB0VqQGgDmFbNmjVLPfPsjp4EEvDRq66unXfeebEmVIUnwYQ9U5YgedOzBDHlmQQx5UUCdx/AsnWv+dbj/1GbNzYaj1DoH5L2OVsQU54unVJ0pOOBjEwVA433ka8/2rNRSUdGp2rxLJhoj+XSKd2yjwRW0U499TTIYMFDDz8SjUvB3/Q5FELLR3VKUXskrx1S1L438PfQY2AV74IL4NEWPkwuOy74azrsepo0i3bwpNbATXqwba677KvWo/MG6P3vuPMuFlM8ZPXq1eHrqdK/X6R/Rmzlc+kuip5blXUuVi1FakAoREMN1WfHn/kAwSRUA+tgSm6DwZ4pS5C86VmCmPJMgpjTYUmcG3AzbITN/yxBTHm6DCasg4nVncHRsxOF4HhnMzwYJ1SDZ9M8cFd32aVT2rGPST1LlUU6n+OdzXZo+ahOKWrf37AuOY/G2H4VcRyZ+u35ME6wrtmkMYKbuqtUp7jsq9b5kq5TxFWeLB3PkWj+YCI1UCEcp3n+TT39wZNg0leKTIJkpSM0nwpiyjMJkpXOGZv/WYJk6TR9sJCRadBIvQZAKBPPggnc1V126Qj2mHntkU7tfYP67ypPUfv+ZnBLPqjIal5leFKztMejOsVlX7XuA0XKU1QfTKQGBKEkPAkmPOfJEiRvepYgpjyTIFnpnDH5j6BOBTHl6TKYyMhUGUyrVlbzKsOTYAI3bYJkpSM0nwrFZKMLxZbnE3o5dKGYbEBcIxTaIWiftR215wl/DwXBE/o0mLJ6OpqeJYgpzySIKY0zNv9tgpjyQBBTni5ZmGxBeCMjU2XwP/hCufAOJrjAmOsiI9iY7Gh6t3XuuPxvV3cJxWSjix/446l3MK1auQOiMnjXbPy7Rm7onBqKZSsazW/Xnn4vYtsXF2w+YvkQqiNYfpqfVS9Ip/Y84e+hk/ggtPGOBkEokz4IJhPY09Eej6ZnCWLK04Viy+OGyVc9TReE6ohuq+fTdCoUk40uCRwfcuyDYIqLQH8stuekDz4b+uQOCI7v1+AdTLKaVzEufzEfRwZqn6W7hJKVT3Xe+ONppVRRDUyr1ovVPPDRv6bJ2+PKV/N0mzz2CNUptjwumHzEcqEgVKfQfHo8KJ3a84S/h5ViO4CCUIw+DSbs6WiPR9OzBDHlmQQxpXHF5KueZhPElAeCmPJ0oZhsdOHNgI9MVcL04PfJah5HeAeTrOZVDPpLBWlXdwnFZKOLH/jjqXcwrVovVvP8hHfNVr6ah1Rhzx3dR1f9UZ1C8+n+KJ3a84S/h4LgCbyDKfc5EwV7Otrj0fQsQUx5JkFMaVwx+aqn2QQx5YEgpjxdKCYbXXgjI1NlMD34sppXGX0STFAMU1Foerd17rj8b1d3CcVko4sf+OOpdzCtWlnNqwzeNdv2ap4LKLZedKpT2rHnjsv/ImWg9q7j0ak9T/h7KAie0OfBRHs81F2CmPJMgpjSuGLyVU/TBcnSqSCmPF0oJhtdeCMjU2UwPfiymlcZvIMp93UmsDHZ0fRu69xx+d+u7hKKyUYXP/DHU+9gWrWymlcZvGtWVvMqxOW/nk91Cs13HY9O7XnC30NB8IQ+Dyba46HuEsSUZxLElMYVk696mk0QUx4IYsrThWKy0SVB3ps3UKQPPhv6ZDVP3ptXFFnNqxiX/+3qLqGYbHTxA388rZQBqgZZzasM3jXb9moeFMtWNMzXbfLYI1T3kXbKm7UNzaPHg9KpPU/4e1gptgMotCL1ZaNPgwl7OhSEpmcJYsozCUJ1ztj8dwliygNBTHm6UEw2uvBmwEemAaRPVvM4wjuYZDWvYlz+0vy8ui3dhJ5vEj/wx9NKGaBqyL2ap9uVWT/9W9d9UjI6p4Zi2YqG+bpNHnuE6j5i8h/LZcszQfPweGRtk2WfRdZ+eMHfw46xHSRbntAKrS+pPx3ewZT7OhMFtkHR0dNtgpjyTIJQnTM2/12iY8s35elCMdnowpsBGJmEFLKaVxm8g6nj1TwKtata547Lf5dOwXyXUEw2uviBP562RVkHo8+rqW3Kqt/+gHVNDA8Ph/+bTbjd3uRqek6d3JZPD3K7Ok1DaF5/0AiqD8Rc9iI6HpMs7PaJHwi1V2p0dDT+xIe0h8x43yXvr82aNSv3syvlPzBmaxB2OD685guuuoP2cPU11+VrFF2EdTABZ555ZvA33XPpwWUONLTvliCJnrcD6DZ6Q60FvoIg9WYjlHTZ2hHElGcSJNKpH9TPNSefEn/iBftg+u7WJ4J2mTRMaAx6g5ARoBhcg1zH5CMcZUiH6d9TT/+MZSHYBxNw9XXXqtqsobAim3W9HsF9XSg0vds6P1IdUeArSIKrPHl1lyCmvFZpBOfMeN78gUs+FPznCXjLns989tbahg0bZhYkkOxRiRar+3qjVmc5CtTUUPxJp+zylwvU4+zhueq6669XX/zSP7MclQC2jmVx5ZVXNp/4znfVrl271PT0dJSIFyLhmpR+UbJHOgbRrKE5atee3azqGOrva199IFJKKu8MoAOYZtLDz7hNoOv7QPuYer2uJicn1TnnnMM6iARBEARBEARBEARBEARBEARBEARBEARBEARBEFIo9f8Pg5n6arwZhwAAAABJRU5ErkJggg=="
+                alt="home" width="70" vspace="20">
+        </a>
+        <!--トップメニューバー-->
+        <ul class="topnav">
+            <li><a href="SC1_tousyo.html">投書箱</a></li>
+            <li><a href="SC1_radio.html">明星昼らじ！</a></li>
+            <li><a class="active" href="SC1_uniform.html">生活委員会</a></li>
+        </ul>
+        <!--以下は動画欄-->
+        <div class="header">
+            高校生活委員会2019企画の制服の着こなし方紹介動画(総合)
+        </div>
+        &nbsp;
+        <video-js id=example-video width=640 height=360 class="vjs-default-skin" controls>
+            <source src="hls/uniform_hs_all/uniform_hs_all.m3u8" type="application/x-mpegURL">
+        </video-js>
+        <script src="https://vjs.zencdn.net/7.4.1/video.js"></script>
+        <script>
+            var player = videojs('example-video');
+        </script>
+        &nbsp;
+        <!--以下はヘッダー-->
+        <div class="footer">
+            ©2019-2020 Kota Misu/高校生活委員会
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(function() {
+        var aTags = $('a');
+        aTags.each(function() {
+            var url = $(this).attr('href');
+            $(this).removeAttr('href');
+            $(this).click(function() {
+                location.href = url;
+            });
+        });
+    });
+</script>
+
+<script>
+    //共通メニューバー
+    (function() {
+
+        var Menu = (function() {
+            var burger = document.querySelector('.burger');
+            var menu = document.querySelector('.menu_all');
+            var menuList = document.querySelector('.menu_all__list');
+            var brand = document.querySelector('.menu_all__brand');
+            var menuItems = document.querySelectorAll('.menu_all__item');
+
+            var active = false;
+
+            var toggleMenu = function() {
+                if (!active) {
+                    menu.classList.add('menu_all--active');
+                    menuList.classList.add('menu_all__list--active');
+                    brand.classList.add('menu_all__brand--active');
+                    burger.classList.add('burger--close');
+                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
+                        menuItems[i].classList.add('menu_all__item--active');
+                    }
+
+                    active = true;
+                } else {
+                    menu.classList.remove('menu_all--active');
+                    menuList.classList.remove('menu_all__list--active');
+                    brand.classList.remove('menu_all__brand--active');
+                    burger.classList.remove('burger--close');
+                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
+                        menuItems[i].classList.remove('menu_all__item--active');
+                    }
+
+                    active = false;
+                }
+            };
+
+            var bindActions = function() {
+                burger.addEventListener('click', toggleMenu, false);
+            };
+
+            var init = function() {
+                bindActions();
+            };
+
+            return {
+                init: init
+            };
+
+        }());
+
+        Menu.init();
+
+    }());
+</script>
+
+</html>

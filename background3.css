@@ -1,0 +1,39 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: -50%;
+    bottom: 0;
+    left: -50%;
+    right: -50%;
+    z-index: -5;
+}
+
+#content {
+    background-color: transparent;
+    background-image: linear-gradient(0deg, transparent 9%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .2) 12%, transparent 13%, transparent 29%, rgba(255, 255, 255, .1) 30%, rgba(255, 255, 255, .1) 31%, transparent 32%, transparent 49%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 51%, transparent 52%, transparent 69%, rgba(255, 255, 255, .1) 70%, rgba(255, 255, 255, .1) 71%, transparent 72%, transparent 89%, rgba(255, 255, 255, .1) 90%, rgba(255, 255, 255, .1) 91%, transparent 92%, transparent), linear-gradient(90deg, transparent 9%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .2) 12%, transparent 13%, transparent 29%, rgba(255, 255, 255, .1) 30%, rgba(255, 255, 255, .1) 31%, transparent 32%, transparent 49%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 51%, transparent 52%, transparent 69%, rgba(255, 255, 255, .1) 70%, rgba(255, 255, 255, .1) 71%, transparent 72%, transparent 89%, rgba(255, 255, 255, .1) 90%, rgba(255, 255, 255, .1) 91%, transparent 92%, transparent);
+    height: 100%;
+    background-size: 50px 50px;
+    z-index: -10;
+}
+
+
+/*HPのホワイトテーマ時の色*/
+
+@media (prefers-color-scheme) {
+    body {
+        background-color: #e6e6fa;
+    }
+}
+
+
+/*HPのダークテーマ対応*/
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #696969;
+    }
+}
