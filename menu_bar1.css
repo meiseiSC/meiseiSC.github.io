@@ -1,68 +1,10 @@
-/*サイドメニューバー*/
-
-ul.sidenav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: relative;
-    overflow: auto;
-}
-
-ul.sidenav li a {
-    display: block;
-    color: #000000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-ul.sidenav li a.active {
-    background-color: #da3c41;
-    color: white;
-}
-
-ul.sidenav li a:hover:not(.active) {
-    background-color: #1b2538;
-    color: white;
-}
-
-div.content {
-    margin-left: 25%;
-    padding: 1px 16px;
-    height: 1000px;
-}
-
-@media screen and (max-width: 900px) {
-    ul.sidenav {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    ul.sidenav li a {
-        float: left;
-        padding: 15px;
-    }
-    div.content {
-        margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    ul.sidenav li a {
-        text-align: center;
-        float: none;
-    }
-}
-
-
 /*トップメニューバー*/
 
 ul.topnav {
     overflow: hidden;
     margin: 1em;
     padding: 0;
-    width: 320px;
+    width: 406px;
     list-style-type: none;
     background-color: #66cdaa;
 }
