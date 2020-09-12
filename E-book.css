@@ -41,21 +41,6 @@
     margin: auto;
 }
 
-
-/*戻るボタン*/
-
-.btn-return {
-    position: fixed;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.25em 0.5em;
-    text-decoration: none;
-    color: #c71585;
-    background: #ECECEC;
-    transition: .4s;
-}
-
-.btn-return:hover {
-    background: #c71585;
-    color: white;
+#flipbook {
+    direction: rtl;
 }

@@ -162,52 +162,6 @@
         }
         /*戻るボタン*/
         
-        .hidden_box {
-            margin: 2em 0;
-            padding: 0;
-        }
-        
-        .hidden_box label {
-            padding: 15px;
-            font-weight: bold;
-            background: #ffebcd;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: .5s;
-        }
-        
-        .hidden_box label:before {
-            display: inline-block;
-            content: '▽';
-            font-family: 'FontAwesome';
-            padding-right: 5px;
-            transition: 0.5s;
-        }
-        
-        .hidden_box label:hover {
-            background: #f0ffff;
-        }
-        
-        .hidden_box input:checked~label:before {
-            content: '✖';
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-            color: #668ad8;
-        }
-        
-        .hidden_box input {
-            display: none;
-        }
-        
-        .hidden_box .hidden_show {
-            height: 0;
-            padding: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: 0.8s;
-        }
-        /*投書箱やリンク集などのメニューバーをしまっておくための箱*/
-        
         .home_btn {
             display: inline-block;
             text-decoration: none;
@@ -258,19 +212,6 @@
             filter: grayscale(30%);
         }
         /*リンク等の下線削除*/
-        
-        .btn-text-3d {
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 40px;
-            color: #006400;
-            text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #ffffff, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
-        }
-        
-        .btn-text-3d:active {
-            top: 4px;
-            text-shadow: none;
-        }
         
         .btn-box {
             padding: 0.5em 1em;
@@ -361,88 +302,59 @@
             bottom: -12px;
             right: -12px;
         }
-        /*乱数生成ボタン*/
+        /*全体適用のテキストボックス*/
         
-        .btn-ransu {
-            display: inline-block;
+        .text {
             position: relative;
-            text-decoration: none;
-            width: 250px;
-            height: 50px;
-            line-height: 50px;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 20px;
-            overflow: hidden;
-            font-weight: bold;
-            background: #9acd32;
+            padding: 0.25em 1em;
+            margin: 2em 0;
+            top: 0;
+            background: #efefef;
         }
         
-        .hidden_box input:checked~.hidden_show {
-            padding: 10px 0;
-            height: auto;
-            opacity: 1;
-        }
-        /*スマートフォンやタブレットのプルダウンデザインの無効化*/
-        
-        select {
-            -webkit-appearance: none;
-        }
-        /*乱数生成のフォントサイズ指定*/
-        
-        #ransu {
-            font-size: 200px;
-        }
-        /*プルダウン*/
-        
-        .number {
-            overflow: hidden;
-            width: 90%;
-            margin: 2em auto;
-            text-align: center;
-        }
-        
-        .number select {
-            width: 100%;
-            padding-right: 1em;
-            cursor: pointer;
-            text-indent: 0.1px;
-            text-overflow: ellipsis;
-            border: none;
-            outline: none;
-            background: transparent;
-            background-image: none;
-            box-shadow: none;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        
-        .number select::-ms-expand {
-            display: none;
-        }
-        
-        .number.cp_sl05 {
-            position: relative;
-            border-radius: 2px;
-            border-radius: 50px;
-            background: #ff8c00;
-        }
-        
-        .number.cp_sl05::before {
+        .text:before,
+        .text:after {
             position: absolute;
-            top: 0.8em;
-            right: 0.8em;
-            width: 0;
-            height: 0;
-            padding: 0;
+            top: 0;
             content: '';
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 6px solid #ffffff;
-            pointer-events: none;
+            width: 10px;
+            height: 100%;
+            display: inline-block;
+            box-sizing: border-box;
         }
         
-        .number.cp_sl05 select {
-            padding: 8px 38px 8px 8px;
-            color: #000000;
+        .text:before {
+            border-left: dotted 2px #15adc1;
+            border-top: dotted 2px #15adc1;
+            border-bottom: dotted 2px #15adc1;
+            left: 0;
+        }
+        
+        .text:after {
+            border-top: dotted 2px #15adc1;
+            border-right: dotted 2px #15adc1;
+            border-bottom: dotted 2px #15adc1;
+            right: 0;
+        }
+        
+        .text p {
+            margin: 0;
+            padding: 0;
+        }
+        /*戻るボタン*/
+        
+        .btn-return {
+            position: fixed;
+            display: inline-block;
+            font-weight: bold;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #c71585;
+            background: #ECECEC;
+            transition: .4s;
+        }
+        
+        .btn-return:hover {
+            background: #c71585;
+            color: white;
         }
