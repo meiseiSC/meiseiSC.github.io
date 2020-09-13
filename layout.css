@@ -207,11 +207,7 @@
             text-decoration: none;
             color: #000000;
         }
-        
-        img {
-            filter: grayscale(30%);
-        }
-        /*リンク等の下線削除*/
+        /*リンクの下線削除*/
         
         .btn-box {
             padding: 0.5em 1em;
@@ -341,13 +337,12 @@
             margin: 0;
             padding: 0;
         }
-        /*戻るボタン*/
         
         .btn-return {
-            position: fixed;
+            position: relative;
             display: inline-block;
             font-weight: bold;
-            padding: 0.25em 0.5em;
+            padding: 0.25em;
             text-decoration: none;
             color: #c71585;
             background: #ECECEC;
@@ -358,3 +353,21 @@
             background: #c71585;
             color: white;
         }
+        /*戻るボタン(最終的に削除)*/
+        
+        .btn {
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+            padding: 0.25em;
+            text-decoration: none;
+            color: #c71585;
+            background: #ECECEC;
+            transition: .4s;
+        }
+        
+        .btn:hover {
+            background: #c71585;
+            color: white;
+        }
+        /*ボタン(最終的にこれに統一)*/
