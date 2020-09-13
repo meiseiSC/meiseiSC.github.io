@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../layout.css" type="text/css">
+    <link rel="stylesheet" href="../../E-book.css" type="text/css">
+    <script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>走れメロス/太宰治</title>
+    <link rel="shortcut icon" href="../../icon/webclip-meisei.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="../../icon/apple-touch-icon-128.ico">
+</head>
+
+<body>
+    <div id="srap">
+        <div class="menu__toggler"><span></span></div>
+        <a href="../dazai_osamu.html">
+            <div class="btn">
+                ☜戻る
+            </div>
+        </a>
+        <a href="hashire_merosu1.pdf" download>
+            <div class="btn">
+                PDFをダウンロード
+            </div>
+        </a>
+        <div class="flipbook-viewport">
+            <div class="container">
+                <div class="flipbook" dir="rtl">
+                    <div style="background-image:url(hashire_merosu1/hyoushi.jpg)"></div>
+                    <div style="background-image"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-01.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-02.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-03.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-04.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-05.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-06.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-07.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-08.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-09.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-10.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-11.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-12.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-14.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-15.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-16.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-17.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-18.jpg)"></div>
+                    <div style="background-image:url(hashire_merosu1/hashire_merosu-19.jpg)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
+    <script>
+        $(function() {
+            var aTags = $('a');
+            aTags.each(function() {
+                var url = $(this).attr('href');
+                $(this).removeAttr('href');
+                $(this).click(function() {
+                    location.href = url;
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        const toggler = document.querySelector('.menu__toggler');
+        const menu = document.querySelector('.menubar');
+
+        toggler.addEventListener('click', () => {
+            toggler.classList.toggle('active');
+            menu.classList.toggle('active');
+        })
+
+        function loadApp() {
+
+
+            $('.flipbook').turn({
+                height: 650,
+                width: 650 * 1.41,
+            });
+        }
+
+        yepnope({
+            test: Modernizr.csstransforms,
+            yep: ['../../lib/turn.js'],
+            nope: ['../../lib/turn.html4.min.js'],
+            both: ['../../pamphlet.css'],
+            complete: loadApp
+        });
+
+        $("#flipbook").turn({
+            direction: "rtl"
+        });
+    </script>
+
+</body>
+
+</html>
