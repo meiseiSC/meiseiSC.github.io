@@ -103,38 +103,38 @@
                     </tr>
 
                     <tr>
-                        <td><input class="btn" type="button" value="AC" onClick="allClear();"></td>
-                        <td><input class="btn" type="button" value="±" onClick="addPlusMinus();"></td>
-                        <td><input class="btn" type="button" value="%" onClick="addPercent();"></td>
-                        <td><input class="btn btn-calc" type="button" value="÷" onClick="addOpe('division');"></td>
+                        <td><input class="btn-c" type="button" value="AC" onClick="allClear();"></td>
+                        <td><input class="btn-c" type="button" value="±" onClick="addPlusMinus();"></td>
+                        <td><input class="btn-c" type="button" value="%" onClick="addPercent();"></td>
+                        <td><input class="btn-c btn-calc" type="button" value="÷" onClick="addOpe('division');"></td>
                     </tr>
 
                     <tr>
-                        <td><input class="btn" type="button" value="7" onClick="addNum('7');"></td>
-                        <td><input class="btn" type="button" value="8" onClick="addNum('8');"></td>
-                        <td><input class="btn" type="button" value="9" onClick="addNum('9');"></td>
-                        <td><input class="btn btn-calc" type="button" value="×" onClick="addOpe('multiple');"></td>
+                        <td><input class="btn-c" type="button" value="7" onClick="addNum('7');"></td>
+                        <td><input class="btn-c" type="button" value="8" onClick="addNum('8');"></td>
+                        <td><input class="btn-c" type="button" value="9" onClick="addNum('9');"></td>
+                        <td><input class="btn-c btn-calc" type="button" value="×" onClick="addOpe('multiple');"></td>
                     </tr>
 
                     <tr>
-                        <td><input class="btn" type="button" value="4" onClick="addNum('4');"></td>
-                        <td><input class="btn" type="button" value="5" onClick="addNum('5');"></td>
-                        <td><input class="btn" type="button" value="6" onClick="addNum('6');"></td>
-                        <td><input class="btn btn-calc" type="button" value="-" onClick="addOpe(' - ');"></td>
+                        <td><input class="btn-c" type="button" value="4" onClick="addNum('4');"></td>
+                        <td><input class="btn-c" type="button" value="5" onClick="addNum('5');"></td>
+                        <td><input class="btn-c" type="button" value="6" onClick="addNum('6');"></td>
+                        <td><input class="btn-c btn-calc" type="button" value="-" onClick="addOpe(' - ');"></td>
                     </tr>
 
                     <tr>
-                        <td><input class="btn" type="button" value="1" onClick="addNum('1');"></td>
-                        <td><input class="btn" type="button" value="2" onClick="addNum('2');"></td>
-                        <td><input class="btn" type="button" value="3" onClick="addNum('3');"></td>
-                        <td><input class="btn btn-calc" type="button" value="+" onClick="addOpe(' + ');"></td>
+                        <td><input class="btn-c" type="button" value="1" onClick="addNum('1');"></td>
+                        <td><input class="btn-c" type="button" value="2" onClick="addNum('2');"></td>
+                        <td><input class="btn-c" type="button" value="3" onClick="addNum('3');"></td>
+                        <td><input class="btn-c btn-calc" type="button" value="+" onClick="addOpe(' + ');"></td>
                     </tr>
 
                     <tr>
-                        <td><input class="btn" type="button" value="0" onClick="addNum('0');"></td>
-                        <td><input class="btn" type="button" value="." onClick="addDot();"></td>
-                        <td><input class="btn" type="button" value="C" onClick="charClear();"></td>
-                        <td><input class="btn btn-calc" type="button" value="=" onClick="calc();"></td>
+                        <td><input class="btn-c" type="button" value="0" onClick="addNum('0');"></td>
+                        <td><input class="btn-c" type="button" value="." onClick="addDot();"></td>
+                        <td><input class="btn-c" type="button" value="C" onClick="charClear();"></td>
+                        <td><input class="btn-c btn-calc" type="button" value="=" onClick="calc();"></td>
                     </tr>
 
                 </table>
@@ -162,7 +162,7 @@
                     a = addComma(a), t = strToCommaNumber(t);
                     var n = $(webdentaku.historyElemId);
                     n.html();
-                    n.append('<p id="' + e + '"><input class="add-formula-btn" type="button" value="' + a + '" onClick=\'allClear();addFormula("' + a + '");\'> = <input class="add-ans-btn" type="button" value="' + t + '" onClick=\'addNum("' + t + '");\'> <input class="del-btn" type="button" value="DEL" onClick=\'delOneHistory("' + e + "\");'></p>")
+                    n.append('<p id="' + e + '"><input class="add-formula-btn-c" type="button" value="' + a + '" onClick=\'allClear();addFormula("' + a + '");\'> = <input class="add-ans-btn-c" type="button" value="' + t + '" onClick=\'addNum("' + t + '");\'> <input class="del-btn-c" type="button" value="DEL" onClick=\'delOneHistory("' + e + "\");'></p>")
                 }
 
                 function appendLSHistory(e, a, t) {

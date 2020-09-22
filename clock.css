@@ -13,12 +13,12 @@
 #second-hand {
     animation: rotation-s2 60s linear infinite;
     background-color: #999;
-    border-radius: 2px;
-    height: 4px;
+    border-radius: 3.5px;
+    height: 7px;
     position: absolute;
-    right: calc(50% - 2px);
-    top: calc(50% - 2px);
-    transform-origin: calc(100% - 2px) center;
+    right: calc(50% - 3.5px);
+    top: calc(50% - 3.5px);
+    transform-origin: calc(100% - 3.5px) center;
     width: 45%;
 }
 
@@ -28,13 +28,13 @@
 #minute-hand {
     animation: rotation-m2 3600s linear infinite;
     background-color: #000;
-    border-radius: 5px;
-    height: 10px;
+    border-radius: 6px;
+    height: 12px;
     position: absolute;
-    right: calc(50% - 5px);
-    top: calc(50% - 5px);
-    transform-origin: calc(100% - 5px) center;
-    width: 38%;
+    right: calc(50% - 6px);
+    top: calc(50% - 6px);
+    transform-origin: calc(100% - 6px) center;
+    width: 40%;
 }
 
 
@@ -43,11 +43,11 @@
 #hour-hand {
     animation: rotation-h2 86400s linear infinite;
     background-color: #cc3b3b;
-    border-radius: 5px;
-    height: 10px;
+    border-radius: 10px;
+    height: 20px;
     position: absolute;
-    right: calc(50% - 5px);
-    top: calc(50% - 5px);
-    transform-origin: calc(100% - 5px) center;
-    width: 25%;
+    right: calc(50% - 10px);
+    top: calc(50% - 10px);
+    transform-origin: calc(100% - 10px) center;
+    width: 27%;
 }

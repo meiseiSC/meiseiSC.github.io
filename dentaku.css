@@ -30,10 +30,11 @@ input[type=button] {
     vertical-align: middle
 }
 
-.btn {
+.btn-c {
     width: 100px;
     height: 100px;
-    font-size: 40px;
+    font-size: 50px;
+    font-weight: bold;
     text-align: center;
     background-color: #ffffff;
     border: solid 1px #000000;

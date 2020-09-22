@@ -298,7 +298,6 @@
             bottom: -12px;
             right: -12px;
         }
-        /*全体適用のテキストボックス*/
         
         .text {
             position: relative;
@@ -337,6 +336,13 @@
             margin: 0;
             padding: 0;
         }
+        
+        .text li {
+            float: left;
+            list-style-type: none;
+            margin: auto;
+        }
+        /*全体適用のテキストボックス(text以外にも)*/
         
         .btn-return {
             position: relative;
