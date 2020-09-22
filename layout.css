@@ -160,7 +160,7 @@
             background: #66cdaa;
             color: white;
         }
-        /*戻るボタン*/
+        /*form管理者用ボタン*/
         
         .home_btn {
             display: inline-block;
@@ -183,12 +183,6 @@
             opacity: 0.8;
             z-index: 10;
         }
-        
-        .home_btn:hover {
-            background: #668ad8;
-            box-shadow: 0px 0px 0px 5px #668ad8;
-            opacity: 1;
-        }
         /*ホームボタン*/
         
         .header {
@@ -208,96 +202,6 @@
             color: #000000;
         }
         /*リンクの下線削除*/
-        
-        .btn-box {
-            padding: 0.5em 1em;
-            margin: 2em 0;
-            width: 200px;
-            margin: auto;
-            text-align: center;
-            color: #ffdead;
-            background: #ffdead;
-            /*背景色*/
-            border-top: solid 6px #ff8c00;
-            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
-            /*影*/
-        }
-        
-        .btn-box p {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .btn-top {
-            display: inline-block;
-            position: relative;
-            padding: 0.35em 1em;
-            background: #668ad8;
-            /*ボタン色*/
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-        
-        .btn-top:before {
-            content: "";
-            position: absolute;
-            top: -16px;
-            left: 0;
-            width: -webkit-calc(100% - 16px);
-            width: calc(100% - 16px);
-            height: 0;
-            border: solid 8px transparent;
-            border-bottom-color: #8eacec;
-            /*ボタン色より明るめの色に*/
-        }
-        
-        .btn-top:active {
-            /*押したとき*/
-            padding: 0.32em 0.9em;
-            -webkit-transform: translateY(-2px);
-            transform: translateY(-2px);
-        }
-        
-        .btn-top:active:before {
-            width: -webkit-calc(100% - 12px);
-            width: calc(100% - 12px);
-        }
-        
-        .btn-top:active:before {
-            top: -12px;
-            border-width: 6px;
-        }
-        
-        .box-top {
-            text-decoration: none;
-            margin: 2em 0;
-            position: relative;
-            padding: 0.25em 1em;
-            border: solid 2px #ffcb8a;
-            border-radius: 3px 0 3px 0;
-            width: 800px;
-            text-align: center;
-        }
-        
-        .box-top:before,
-        .box-top:after {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border: solid 2px #ffcb8a;
-            border-radius: 50%;
-        }
-        
-        .box-top:after {
-            top: -12px;
-            left: -12px;
-        }
-        
-        .box-top:before {
-            bottom: -12px;
-            right: -12px;
-        }
         
         .text {
             position: relative;
