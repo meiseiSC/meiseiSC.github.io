@@ -12,220 +12,43 @@
     <link rel="shortcut icon" href="icon/webclip-meisei.ico">
     <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-128.ico">
 </head>
-
 <style>
-    #sbox {
-        position: absolute;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        outline: 0;
-        width: 400px;
-        height: 40px;
-        padding: 0 20px;
-        border-radius: 5px 5px 5px 5px;
-        background: #eee;
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+    }
+    
+    iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
     }
 </style>
 
 <body oncontextmenu='return false;'>
-    <canvas id="canvas"></canvas>
-    <section id="srap">
-        &nbsp;
-        <!--以下は明星中学・高等学校のロゴ兼リンク-->
-        <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
-            <img src="icon/logo_hs.svg" width="300">
-        </a>
-        &nbsp;
-        <!--以下はタイトル-->
-        <div class="title-wrapper">
-            <div class="title">
-                <div class="bounceInDown">
-                    生徒会ホーム
-                </div>
-            </div>
-        </div>
-        <br> &nbsp;
-        <!--検索窓-->
-        <form method=get action="https://www.google.co.jp/search">
-            <tr>
-                <td>
-                    <input id="sbox" id="s" name=q type="text" placeholder="Google検索" />
-                </td>
-            </tr>
-        </form>
-        <br> &nbsp;
-        <center>
-            <div class="header">生徒会</div>
-        </center>
-        <div class="mainmenu">
-            <a class="bar" href="SC1_tousyo.html">
-                <div class="mainmenu_title">投書箱</div>
-            </a>
-        </div>
-        <div class="mainmenu">
-            <a class="bar" href="SC1_radio.html">
-                <div class="mainmenu_title">明星昼らじ！</div>
-            </a>
-        </div>
-        <div class="mainmenu">
-            <a class="bar" href="SC1_uniform.html">
-                <div class="mainmenu_title">制服の着こなし方</div>
-            </a>
-        </div>
-        &nbsp;
-        <div class="mainmenu">
-            <a href="meisei_festival/pamphlet.html" class="bar">
-                <div class="mainmenu_title">文化祭パンフレット</div>
-            </a>
-        </div>
-        <div class="mainmenu">
-            <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="bar">
-                <div class="mainmenu_title">生徒会通信</div>
-            </a>
-        </div>
-        &nbsp;
-        <center>
-            <div class="header">いろいろ</div>
-        </center>
-        <div class="mainmenu">
-            <a href="SC2_link.html" class="bar">
-                <div class="mainmenu_title">常用リンク集</div>
-            </a>
-            <a href="SC2_dentaku.html" class="bar">
-                <div class="mainmenu_title">WEB電卓</div>
-            </a>
-            <a href="SC2_time.html" class="bar">
-                <div class="mainmenu_title">アナログ時計</div>
-            </a>
-        </div>
-        &nbsp;
-        <center>
-            <div class="header">学習サポート</div>
-        </center>
-        <div class="mainmenu">
-            <a href="books/book.html" class="bar">
-                <div class="mainmenu_title">デジタル書籍</div>
-            </a>
-        </div>
-        &nbsp;
-        <center>
-            <div class="header">サイト情報</div>
-        </center>
-        <div class="mainmenu">
-            <a href="admin.html" class="bar">
-                <div class="mainmenu_title">このサイトについて</div>
-            </a>
-            <a href="feedback.html" class="bar">
-                <div class="mainmenu_title">フィードバック</div>
-            </a>
-        </div>
-        </div>
-        <!--以下はヘッダー-->
-        <a href="admin.html">
-            <div class="footer">
-                ©2019-2020 Kota Misu
-            </div>
-        </a>
-    </section>
-
-</body>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-    $(function() {
-        var aTags = $('a');
-        aTags.each(function() {
-            var url = $(this).attr('href');
-            $(this).removeAttr('href');
-            $(this).click(function() {
-                location.href = url;
+    <!--以下はホームボタン-->
+    <p class="home_btn" onclick="window.location.reload(false);"></p>
+    <div class="container">
+        <iframe src="SC_menu.html" width="100%" height="100%"></iframe>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(window).on('load resize', function() {
+            $('.container').css('width', $(window).width());
+            $('.container').css('height', $(window).height());
+        });
+        $(function() {
+            var aTags = $('a');
+            aTags.each(function() {
+                var url = $(this).attr('href');
+                $(this).removeAttr('href');
+                $(this).click(function() {
+                    location.href = url;
+                });
             });
         });
-    });
-</script>
-
-<script>
-    //背景(canvas)
-    var livePatern = {
-        canvas: null,
-        context: null,
-        cols: 0,
-        rows: 0,
-        colors: [252, 251, 249, 248, 241, 240],
-        triangleColors: [],
-        destColors: [],
-
-        init: function() {
-            this.canvas = document.getElementById('canvas');
-            this.context = this.canvas.getContext('2d');
-            this.cols = Math.floor(document.body.clientWidth / 24);
-            this.rows = Math.floor(document.body.clientHeight / 24) + 1;
-
-            this.canvas.width = document.body.clientWidth;
-            this.canvas.height = document.body.clientHeight;
-
-            this.drawBackground();
-            this.animate();
-        },
-
-        drawTriangle: function(x, y, color, inverted) {
-            inverted = inverted == undefined ? false : inverted;
-
-            this.context.beginPath();
-            this.context.moveTo(x, y);
-            this.context.lineTo(inverted ? x - 22 : x + 22, y + 11);
-            this.context.lineTo(x, y + 22);
-            this.context.fillStyle = "rgb(" + color + "," + color + "," + color + ")";
-            this.context.fill();
-            this.context.closePath();
-        },
-
-        getColor: function() {
-            return this.colors[(Math.floor(Math.random() * 6))];
-        },
-
-        drawBackground: function() {
-            var eq = null;
-            var x = this.cols;
-            var destY = 0;
-            var color, y;
-
-            while (x--) {
-                eq = x % 2;
-                y = this.rows;
-
-                while (y--) {
-                    destY = Math.round((y - 0.5) * 24);
-
-                    this.drawTriangle(x * 24 + 2, eq == 1 ? destY : y * 24, this.getColor());
-                    this.drawTriangle(x * 24, eq == 1 ? destY : y * 24, this.getColor(), true);
-                }
-            }
-        },
-
-        animate: function() {
-            var me = this;
-
-            var x = Math.floor(Math.random() * this.cols);
-            var y = Math.floor(Math.random() * this.rows);
-            var eq = x % 2;
-
-            if (eq == 1) {
-                me.drawTriangle(x * 24, Math.round((y - 0.5) * 24), this.getColor(), true);
-            } else {
-                me.drawTriangle(x * 24 + 2, y * 24, this.getColor());
-            }
-
-            setTimeout(function() {
-                me.animate.call(me);
-            }, 10);
-        },
-    };
-
-    ! function() {
-        livePatern.init();
-    }()
-</script>
+    </script>
 
 </html>

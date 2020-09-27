@@ -4,19 +4,21 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="layout.css" type="text/css">
-    <link rel="stylesheet" href="background3.css" type="text/css">
-    <link rel="stylesheet" href="menu_bar2.css" type="text/css">
+    <link rel="stylesheet" href="background2.css" type="text/css">
+    <link rel="stylesheet" href="menu_bar1.css" type="text/css">
     <link rel="stylesheet" href="menu_all.css" type="text/css">
-    <link rel="stylesheet" href="clock.css" type="text/css">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="initial-scale=1.0">
-    <title>アナログ時計</title>
+    <title>生徒会</title>
     <link rel="shortcut icon" href="icon/webclip-meisei.ico">
     <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-128.ico">
 </head>
 
-<body oncontextmenu='return false;'>
+<body>
+    <div class='wave -one'></div>
+    <div class='wave -two'></div>
+    <div class='wave -three'></div>
     <!--共通メニューバー-->
     <header class="main_menu">
         <div class="burger">
@@ -24,19 +26,18 @@
             <div class="burger__patty"></div>
             <div class="burger__patty"></div>
         </div>
-
         <nav class="menu_all">
             <div class="menu_all__brand">
                 <div class="logo"><img src="icon/meisei.png"></div>
             </div>
             <ul class="menu_all__list">
                 <li class="menu_all__item">
-                    <a href="SC1_tousyo.html" class="menu_all__link">
+                    <a href="SC1_main1.html" class="menu_all__link">
                     投書箱
                 </a>
                 </li>
                 <li class="menu_all__item">
-                    <a href="SC1_radio.html" class="menu_all__link">
+                    <a href="SC1_main2.html" class="menu_all__link">
                     明星昼らじ！
                 </a>
                 </li>
@@ -58,74 +59,46 @@
             </ul>
         </nav>
     </header>
-    <div id="content">
-        <div id="srap">
-            &nbsp;
-            <!--以下は明星中学・高等学校のロゴ兼リンク-->
-            <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
-                <img src="https://www.meisei.ac.jp/assets/img/hs/common/logo_hs.svg" width="300">
-            </a>
-            &nbsp;
-            <!--以下はタイトル-->
-            <div class="title-wrapper">
-                <div class="title">
-                    <div class="bounceInDown">
-                        アナログ時計
-                    </div>
+    <div id="srap">
+        &nbsp;
+        <!--以下は明星中学・高等学校のロゴ兼リンク-->
+        <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
+            <img src="icon/logo_hs.svg" width="300">
+        </a>
+        &nbsp;
+        <!--以下はタイトル-->
+        <div class="title-wrapper">
+            <div class="title">
+                <div class="bounceInDown">
+                    生徒会
                 </div>
             </div>
-            <!--トップメニューバー-->
-            <ul class="topnav">
-                <li><a href="SC2_link.html">リンク集</a></li>
-                <li><a href="SC2_dentaku.html">WEB電卓</a></li>
-                <li><a class="active" href="SC2_time.html">アナログ時計</a></li>
-            </ul>
-            <!--以下はアナログ時計-->
-            <div class="header">
-                アナログ時計です
-            </div>
-            &nbsp;
-            <div id="clock">
-                <img src="clock.png" width="700">
-                <div id="hour-hand"></div>
-                <div id="minute-hand"></div>
-                <div id="second-hand"></div>
-            </div>
-            <!--以下はヘッダー-->
-            <div class="footer">
-                ©2019-2020 Kota Misu
-            </div>
         </div>
-</body>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-    $(function() {
-        var aTags = $('a');
-        aTags.each(function() {
-            var url = $(this).attr('href');
-            $(this).removeAttr('href');
-            $(this).click(function() {
-                location.href = url;
-            });
-        });
-    });
-</script>
-
-<script>
+        <!--トップメニューバー-->
+        <ul class="topnav">
+            <li><a href="SC1_tousyo.html" target="SC1">投書箱<br>(生徒会)</a></li>
+            <li><a href="SC1_radio.html" target="SC1">明星昼らじ！<br>(広報放送委員会)</a></li>
+            <li><a href="SC1_uniform.html" target="SC1">制服の着こなし方<br>(生活委員会)</a></li>
+            <li><a href="meisei_festival/pamphlet.html" target="SC1">明星祭パンフレット<br>アーカイブ</a></li>
+        </ul>
+        <center>
+            <iframe name="SC1" src=SC1_tousyo.html " width="800 " height="1500 " frameborder="0 " marginheight="0 " marginwidth="0 ">読み込んでいます…</iframe>
+        </center>
+        <!--以下はヘッダー-->
+        <div class="footer ">
+            ©2019-2020 Kota Misu
+        </div>
+    </div>
+</body><script>
     //共通メニューバー
     (function() {
-
         var Menu = (function() {
             var burger = document.querySelector('.burger');
             var menu = document.querySelector('.menu_all');
             var menuList = document.querySelector('.menu_all__list');
             var brand = document.querySelector('.menu_all__brand');
             var menuItems = document.querySelectorAll('.menu_all__item');
-
             var active = false;
-
             var toggleMenu = function() {
                 if (!active) {
                     menu.classList.add('menu_all--active');
@@ -135,7 +108,6 @@
                     for (var i = 0, ii = menuItems.length; i < ii; i++) {
                         menuItems[i].classList.add('menu_all__item--active');
                     }
-
                     active = true;
                 } else {
                     menu.classList.remove('menu_all--active');
@@ -145,46 +117,20 @@
                     for (var i = 0, ii = menuItems.length; i < ii; i++) {
                         menuItems[i].classList.remove('menu_all__item--active');
                     }
-
                     active = false;
                 }
             };
-
             var bindActions = function() {
                 burger.addEventListener('click', toggleMenu, false);
             };
-
             var init = function() {
                 bindActions();
             };
-
             return {
                 init: init
             };
-
         }());
-
         Menu.init();
-
     }());
 </script>
-
-<script>
-    //時計JS// 現在時刻の設定
-    var time = new Date();
-    var second = time.getSeconds();
-    var minute = time.getMinutes();
-    var hour = time.getHours();
-
-    // 現在時刻を元にした角度の設定
-    var secondDeg = (second * 360 / 60) + 90;
-    var minuteDeg = (minute * 360 / 60) + ((second * 360 / 60) / 60) + 90;
-    var hourDeg = (hour * 360 / 12) + ((minute * 360 / 60) / 12) + ((second * 360 / 60) / 720) + 90;
-
-    var animation = document.createElement("style");
-    animation.innerHTML = "@keyframes rotation-s2 {0% {transform: rotate(" + secondDeg + "deg)}100% {transform: rotate(" + (secondDeg + 360) + "deg)}}@keyframes rotation-m2 {0% {transform: rotate(" + minuteDeg + "deg)}100% {transform: rotate(" + (minuteDeg + 360) + "deg)}}@keyframes rotation-h2 {0% {transform: rotate(" + hourDeg + "deg)}100% {transform: rotate(" + (hourDeg + 360) + "deg)}}";
-    document.head.appendChild(animation);
-</script>
-
-
 </html>
