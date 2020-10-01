@@ -4,57 +4,12 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="layout.css" type="text/css">
-    <link rel="stylesheet" href="background2.css" type="text/css">
     <link rel="stylesheet" href="menu_bar1.css" type="text/css">
-    <link rel="stylesheet" href="menu_all.css" type="text/css">
     <meta name="viewport" content="initial-scale=1.0">
     <title>生徒会</title>
 </head>
 
 <body>
-    <div class='wave -one'></div>
-    <div class='wave -two'></div>
-    <div class='wave -three'></div>
-    <!--共通メニューバー-->
-    <header class="main_menu">
-        <div class="burger">
-            <div class="burger__patty"></div>
-            <div class="burger__patty"></div>
-            <div class="burger__patty"></div>
-        </div>
-        <nav class="menu_all">
-            <div class="menu_all__brand">
-                <div class="logo"><img src="icon/meisei.png"></div>
-            </div>
-            <ul class="menu_all__list">
-                <li class="menu_all__item">
-                    <a href="SC1_main1.html" class="menu_all__link">
-                    投書箱
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="SC1_main2.html" class="menu_all__link">
-                    明星昼らじ！
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="SC2_dentaku.html" class="menu_all__link">
-                    WEB電卓
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="menu_all__link">
-                    生徒会新聞
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="admin.html" class="menu_all__link ">
-                    このサイトについて
-                </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <div id="srap">
         &nbsp;
         <!--以下は明星中学・高等学校のロゴ兼リンク-->
@@ -65,9 +20,7 @@
         <!--以下はタイトル-->
         <div class="title-wrapper">
             <div class="title">
-                <div class="bounceInDown">
-                    生徒会
-                </div>
+                生徒会
             </div>
         </div>
         <!--トップメニューバー-->
@@ -85,48 +38,5 @@
             ©2019-2020 Kota Misu
         </div>
     </div>
-</body><script>
-    //共通メニューバー
-    (function() {
-        var Menu = (function() {
-            var burger = document.querySelector('.burger');
-            var menu = document.querySelector('.menu_all');
-            var menuList = document.querySelector('.menu_all__list');
-            var brand = document.querySelector('.menu_all__brand');
-            var menuItems = document.querySelectorAll('.menu_all__item');
-            var active = false;
-            var toggleMenu = function() {
-                if (!active) {
-                    menu.classList.add('menu_all--active');
-                    menuList.classList.add('menu_all__list--active');
-                    brand.classList.add('menu_all__brand--active');
-                    burger.classList.add('burger--close');
-                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
-                        menuItems[i].classList.add('menu_all__item--active');
-                    }
-                    active = true;
-                } else {
-                    menu.classList.remove('menu_all--active');
-                    menuList.classList.remove('menu_all__list--active');
-                    brand.classList.remove('menu_all__brand--active');
-                    burger.classList.remove('burger--close');
-                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
-                        menuItems[i].classList.remove('menu_all__item--active');
-                    }
-                    active = false;
-                }
-            };
-            var bindActions = function() {
-                burger.addEventListener('click', toggleMenu, false);
-            };
-            var init = function() {
-                bindActions();
-            };
-            return {
-                init: init
-            };
-        }());
-        Menu.init();
-    }());
-</script>
+</body>
 </html>

@@ -1,27 +1,26 @@
-/*背景*/
-
 .wave {
+    /*背景*/
     opacity: 0.5;
     position: fixed;
-    background: #0af;
+    background: #96d4fa;
     width: 1000px;
     height: 1000px;
     margin-left: -250px;
     margin-top: -250px;
     transform-origin: 50% 48%;
     border-radius: 43%;
-    animation: drift 3000ms infinite linear;
+    animation: drift 6s infinite linear;
     z-index: -1;
 }
 
 .wave.-three {
-    animation: drift 5000ms infinite linear;
+    animation: drift 10s infinite linear;
 }
 
 .wave.-two {
-    animation: drift 7000ms infinite linear;
+    animation: drift 20s infinite linear;
     opacity: 0.5;
-    background: yellow;
+    background: #191970;
 }
 
 @keyframes drift {
@@ -33,11 +32,13 @@
     }
 }
 
-
-/*HPのダークテーマ対応*/
+body {
+    background-color: #cccaca;
+}
 
 @media (prefers-color-scheme: dark) {
+    /*HPのダークテーマ対応*/
     body {
-        background-color: #696969;
+        background-color: #595858;
     }
 }

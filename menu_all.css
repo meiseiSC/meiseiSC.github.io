@@ -5,19 +5,18 @@
 }
 
 .burger {
-    position: absolute;
-    z-index: 10;
+    position: fixed;
+    z-index: 5;
     right: 30px;
     cursor: pointer;
     transform: rotateY(0);
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .burger__patty {
     width: 50px;
     height: 5px;
     margin: 0 0 7px 0;
-    background: #3cb371;
+    background: #ff4a4a;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -46,7 +45,6 @@
     top: 0;
     width: 100%;
     visibility: hidden;
-    font-family: 'Arial', YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ ゴシック', sans-serif;
 }
 
 .menu_all--active {
@@ -68,7 +66,7 @@
 .menu_all__list {
     margin: 0;
     padding: 0;
-    background: #2d9e94;
+    background: #661f1fe5;
     list-style-type: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
@@ -79,9 +77,10 @@
 }
 
 .menu_all__brand {
-    background: #38C5B9;
+    background: #4d1616;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     transform: translate3d(0, 100%, 0);
+    opacity: .9;
 }
 
 .menu_all__brand--active {

@@ -4,415 +4,292 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="layout.css" type="text/css">
-    <link rel="stylesheet" href="background3.css" type="text/css">
     <link rel="stylesheet" href="menu_bar2.css" type="text/css">
-    <link rel="stylesheet" href="menu_all.css" type="text/css">
     <link rel="stylesheet" href="dentaku.css" type="text/css">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="initial-scale=1.0">
     <title>WEB電卓</title>
-    <link rel="shortcut icon" href="icon/webclip-meisei.ico">
-    <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-128.ico">
 </head>
 
 <body oncontextmenu='return false;'>
-    <!--共通メニューバー-->
-    <header class="main_menu">
-        <div class="burger">
-            <div class="burger__patty"></div>
-            <div class="burger__patty"></div>
-            <div class="burger__patty"></div>
+    <div id="srap">
+        &nbsp;
+        <!--以下は明星中学・高等学校のロゴ兼リンク-->
+        <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
+            <img src="https://www.meisei.ac.jp/assets/img/hs/common/logo_hs.svg" width="300">
+        </a>
+        &nbsp;
+        <!--以下はタイトル-->
+        <div class="title-wrapper">
+            <div class="title">
+                WEB電卓
+            </div>
+        </div>
+        <!--トップメニューバー-->
+        <ul class="topnav">
+            <li><a href="SC2_link.html">リンク集</a></li>
+            <li><a class="active" href="SC2_dentaku.html">WEB電卓</a></li>
+            <li><a href="SC2_time.html">アナログ時計</a></li>
+        </ul>
+        <!--以下はWEB電卓-->
+        <div class="header">
+            電卓です。内面的にJavaScriptとcookieを使用しています。
+        </div>
+        &nbsp;
+        <div id="history" class="history" hidden></div>
+
+        <div class="dentaku">
+
+            <table>
+
+                <tr>
+                    <td colspan="4">
+                        <div id="display" class="display">0</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input class="btn-c" type="button" value="AC" onClick="allClear();"></td>
+                    <td><input class="btn-c" type="button" value="±" onClick="addPlusMinus();"></td>
+                    <td><input class="btn-c" type="button" value="%" onClick="addPercent();"></td>
+                    <td><input class="btn-c btn-calc" type="button" value="÷" onClick="addOpe('division');"></td>
+                </tr>
+
+                <tr>
+                    <td><input class="btn-c" type="button" value="7" onClick="addNum('7');"></td>
+                    <td><input class="btn-c" type="button" value="8" onClick="addNum('8');"></td>
+                    <td><input class="btn-c" type="button" value="9" onClick="addNum('9');"></td>
+                    <td><input class="btn-c btn-calc" type="button" value="×" onClick="addOpe('multiple');"></td>
+                </tr>
+
+                <tr>
+                    <td><input class="btn-c" type="button" value="4" onClick="addNum('4');"></td>
+                    <td><input class="btn-c" type="button" value="5" onClick="addNum('5');"></td>
+                    <td><input class="btn-c" type="button" value="6" onClick="addNum('6');"></td>
+                    <td><input class="btn-c btn-calc" type="button" value="-" onClick="addOpe(' - ');"></td>
+                </tr>
+
+                <tr>
+                    <td><input class="btn-c" type="button" value="1" onClick="addNum('1');"></td>
+                    <td><input class="btn-c" type="button" value="2" onClick="addNum('2');"></td>
+                    <td><input class="btn-c" type="button" value="3" onClick="addNum('3');"></td>
+                    <td><input class="btn-c btn-calc" type="button" value="+" onClick="addOpe(' + ');"></td>
+                </tr>
+
+                <tr>
+                    <td><input class="btn-c" type="button" value="0" onClick="addNum('0');"></td>
+                    <td><input class="btn-c" type="button" value="." onClick="addDot();"></td>
+                    <td><input class="btn-c" type="button" value="C" onClick="charClear();"></td>
+                    <td><input class="btn-c btn-calc" type="button" value="=" onClick="calc();"></td>
+                </tr>
+
+            </table>
+
         </div>
 
-        <nav class="menu_all">
-            <div class="menu_all__brand">
-                <div class="logo"><img src="icon/meisei.png"></div>
-            </div>
-            <ul class="menu_all__list">
-                <li class="menu_all__item">
-                    <a href="SC1_tousyo.html" class="menu_all__link">
-                    投書箱
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="SC1_radio.html" class="menu_all__link">
-                    明星昼らじ！
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="SC2_dentaku.html" class="menu_all__link">
-                    WEB電卓
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="menu_all__link">
-                    生徒会新聞
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="admin.html" class="menu_all__link ">
-                    このサイトについて
-                </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div id="content">
-        <div id="srap">
-            &nbsp;
-            <!--以下は明星中学・高等学校のロゴ兼リンク-->
-            <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
-                <img src="https://www.meisei.ac.jp/assets/img/hs/common/logo_hs.svg" width="300">
-            </a>
-            &nbsp;
-            <!--以下はタイトル-->
-            <div class="title-wrapper">
-                <div class="title">
-                    <div class="bounceInDown">
-                        WEB電卓
-                    </div>
-                </div>
-            </div>
-            <!--トップメニューバー-->
-            <ul class="topnav">
-                <li><a href="SC2_link.html">リンク集</a></li>
-                <li><a class="active" href="SC2_dentaku.html">WEB電卓</a></li>
-                <li><a href="SC2_time.html">アナログ時計</a></li>
-            </ul>
-            <!--以下はWEB電卓-->
-            <div class="header">
-                電卓です。内面的にJavaScriptとcookieを使用しています。
-            </div>
-            &nbsp;
-            <div id="history" class="history" hidden></div>
-
-            <div class="dentaku">
-
-                <table>
-
-                    <tr>
-                        <td colspan="4">
-                            <div id="display" class="display">0</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><input class="btn-c" type="button" value="AC" onClick="allClear();"></td>
-                        <td><input class="btn-c" type="button" value="±" onClick="addPlusMinus();"></td>
-                        <td><input class="btn-c" type="button" value="%" onClick="addPercent();"></td>
-                        <td><input class="btn-c btn-calc" type="button" value="÷" onClick="addOpe('division');"></td>
-                    </tr>
-
-                    <tr>
-                        <td><input class="btn-c" type="button" value="7" onClick="addNum('7');"></td>
-                        <td><input class="btn-c" type="button" value="8" onClick="addNum('8');"></td>
-                        <td><input class="btn-c" type="button" value="9" onClick="addNum('9');"></td>
-                        <td><input class="btn-c btn-calc" type="button" value="×" onClick="addOpe('multiple');"></td>
-                    </tr>
-
-                    <tr>
-                        <td><input class="btn-c" type="button" value="4" onClick="addNum('4');"></td>
-                        <td><input class="btn-c" type="button" value="5" onClick="addNum('5');"></td>
-                        <td><input class="btn-c" type="button" value="6" onClick="addNum('6');"></td>
-                        <td><input class="btn-c btn-calc" type="button" value="-" onClick="addOpe(' - ');"></td>
-                    </tr>
-
-                    <tr>
-                        <td><input class="btn-c" type="button" value="1" onClick="addNum('1');"></td>
-                        <td><input class="btn-c" type="button" value="2" onClick="addNum('2');"></td>
-                        <td><input class="btn-c" type="button" value="3" onClick="addNum('3');"></td>
-                        <td><input class="btn-c btn-calc" type="button" value="+" onClick="addOpe(' + ');"></td>
-                    </tr>
-
-                    <tr>
-                        <td><input class="btn-c" type="button" value="0" onClick="addNum('0');"></td>
-                        <td><input class="btn-c" type="button" value="." onClick="addDot();"></td>
-                        <td><input class="btn-c" type="button" value="C" onClick="charClear();"></td>
-                        <td><input class="btn-c btn-calc" type="button" value="=" onClick="calc();"></td>
-                    </tr>
-
-                </table>
-
-            </div>
 
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            var webdentaku = {
+                historyElemId: "#history",
+                ans: !1,
+                buff: "0",
+                debug: !1,
+                limit: 9
+            };
 
-            <script>
-                var webdentaku = {
-                    historyElemId: "#history",
-                    ans: !1,
-                    buff: "0",
-                    debug: !1,
-                    limit: 9
-                };
+            function isWebStorage() {
+                return "undefined" != typeof Storage ? (debugLog("WEB Storage True"), !0) : (debugLog("WEN Storage False"), !1)
+            }
 
-                function isWebStorage() {
-                    return "undefined" != typeof Storage ? (debugLog("WEB Storage True"), !0) : (debugLog("WEN Storage False"), !1)
+            function appendHistory(e, a, t) {
+                a = addComma(a), t = strToCommaNumber(t);
+                var n = $(webdentaku.historyElemId);
+                n.html();
+                n.append('<p id="' + e + '"><input class="add-formula-btn-c" type="button" value="' + a + '" onClick=\'allClear();addFormula("' + a + '");\'> = <input class="add-ans-btn-c" type="button" value="' + t + '" onClick=\'addNum("' + t + '");\'> <input class="del-btn-c" type="button" value="DEL" onClick=\'delOneHistory("' + e + "\");'></p>")
+            }
+
+            function appendLSHistory(e, a, t) {
+                isWebStorage() && (vals = JSON.stringify({
+                    historyId: e,
+                    formula: a,
+                    answer: ans
+                }), localStorage.setItem(e, vals))
+            }
+
+
+            function historyScroll() {
+                $(webdentaku.historyElemId).scrollTop($(webdentaku.historyElemId)[0].scrollHeight)
+            }
+
+            function kbkeys() {
+                return {
+                    48: 0,
+                    49: 1
                 }
+            }
 
-                function appendHistory(e, a, t) {
-                    a = addComma(a), t = strToCommaNumber(t);
-                    var n = $(webdentaku.historyElemId);
-                    n.html();
-                    n.append('<p id="' + e + '"><input class="add-formula-btn-c" type="button" value="' + a + '" onClick=\'allClear();addFormula("' + a + '");\'> = <input class="add-ans-btn-c" type="button" value="' + t + '" onClick=\'addNum("' + t + '");\'> <input class="del-btn-c" type="button" value="DEL" onClick=\'delOneHistory("' + e + "\");'></p>")
-                }
+            function debugLog(e) {
+                webdentaku.debug && console.log("[DEBUG] " + e)
+            }
 
-                function appendLSHistory(e, a, t) {
-                    isWebStorage() && (vals = JSON.stringify({
-                        historyId: e,
-                        formula: a,
-                        answer: ans
-                    }), localStorage.setItem(e, vals))
-                }
+            function makeHistoryId() {
+                var e = (new Date).getTime();
+                return debugLog("Make historyId => " + (e = String(e))), e
+            }
 
+            function delLSOneHistory(e) {
+                isWebStorage() && localStorage.removeItem(e)
+            }
 
-                function historyScroll() {
-                    $(webdentaku.historyElemId).scrollTop($(webdentaku.historyElemId)[0].scrollHeight)
-                }
+            function delOneHistory(e) {
+                $("#" + e).remove(), delLSOneHistory(e)
+            }
 
-                function kbkeys() {
-                    return {
-                        48: 0,
-                        49: 1
-                    }
-                }
+            function addFormula(e) {
+                webdentaku.ans && (webdentaku.ans = !1), _value = e.replace(/,/g, "").replace(/÷/g, "/").replace(/×/g, "*"), webdentaku.buff = _value, addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
+            }
 
-                function debugLog(e) {
-                    webdentaku.debug && console.log("[DEBUG] " + e)
-                }
+            function addPercent() {
+                var e = getWords(),
+                    a = e.pop(e.length - 1);
+                a.match(/\d$/) && (a = 1e6 * a / 1e8), e.push(a), str = e.join(" "), webdentaku.buff = str, addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
+            }
 
-                function makeHistoryId() {
-                    var e = (new Date).getTime();
-                    return debugLog("Make historyId => " + (e = String(e))), e
-                }
-
-                function delLSOneHistory(e) {
-                    isWebStorage() && localStorage.removeItem(e)
-                }
-
-                function delOneHistory(e) {
-                    $("#" + e).remove(), delLSOneHistory(e)
-                }
-
-                function addFormula(e) {
-                    webdentaku.ans && (webdentaku.ans = !1), _value = e.replace(/,/g, "").replace(/÷/g, "/").replace(/×/g, "*"), webdentaku.buff = _value, addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
-                }
-
-                function addPercent() {
+            function addPlusMinus() {
+                if ("0" == webdentaku.buff);
+                else if (webdentaku.buff.match(/\d$/)) {
                     var e = getWords(),
                         a = e.pop(e.length - 1);
-                    a.match(/\d$/) && (a = 1e6 * a / 1e8), e.push(a), str = e.join(" "), webdentaku.buff = str, addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
+                    a *= -1, e.push(a), str = e.join(" "), webdentaku.buff = str, addToDisplayFromBuff()
                 }
+            }
 
-                function addPlusMinus() {
-                    if ("0" == webdentaku.buff);
-                    else if (webdentaku.buff.match(/\d$/)) {
-                        var e = getWords(),
-                            a = e.pop(e.length - 1);
-                        a *= -1, e.push(a), str = e.join(" "), webdentaku.buff = str, addToDisplayFromBuff()
-                    }
-                }
+            function allClear() {
+                webdentaku.buff = "0", addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
+            }
 
-                function allClear() {
-                    webdentaku.buff = "0", addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
-                }
+            function charClear() {
+                webdentaku.buff = webdentaku.buff.replace(/-?.$|\s+[\+\-\*\/]\s+$/, ""), "" == webdentaku.buff && (webdentaku.buff = "0"), addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
+            }
 
-                function charClear() {
-                    webdentaku.buff = webdentaku.buff.replace(/-?.$|\s+[\+\-\*\/]\s+$/, ""), "" == webdentaku.buff && (webdentaku.buff = "0"), addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
-                }
+            function wordClear() {
+                var e = getWords(),
+                    a = (e.pop(e.length - 1), e.join(" "));
+                a.match(/^\s+$/) && (a = "0"), a.match(/[\.|\d]$/) || (a += " "), webdentaku.buff = a, addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
+            }
 
-                function wordClear() {
-                    var e = getWords(),
-                        a = (e.pop(e.length - 1), e.join(" "));
-                    a.match(/^\s+$/) && (a = "0"), a.match(/[\.|\d]$/) || (a += " "), webdentaku.buff = a, addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length)
-                }
+            function changeDisplayFontSize(e) {
+                var a = 36,
+                    t = 300 / e * 1.4;
+                a = 50 < t ? 50 : 36 > t ? 36 : t, $("#display").css("font-size", a)
+            }
 
-                function changeDisplayFontSize(e) {
-                    var a = 36,
-                        t = 300 / e * 1.4;
-                    a = 50 < t ? 50 : 36 > t ? 36 : t, $("#display").css("font-size", a)
+            function addDot() {
+                var e = getLastWord();
+                if ("0" == webdentaku.buff) {
+                    var a = "0.";
+                    webdentaku.buff = a, addToDisplayFromBuff()
+                } else if (e.match(/\./)) webdentaku.ans && (webdentaku.ans = !1, webdentaku.buff = "0.", addToDisplayFromBuff());
+                else if (e.match(/\d$/)) {
+                    webdentaku.ans && (webdentaku.buff = "0", webdentaku.ans = !1);
+                    a = ".";
+                    webdentaku.buff += a, webdentaku.buff = webdentaku.buff.replace(/\s+0+(.*\.)$/, " $1"), addToDisplayFromBuff()
+                } else {
+                    a = "0.";
+                    webdentaku.buff += a, addToDisplayFromBuff()
                 }
+            }
 
-                function addDot() {
-                    var e = getLastWord();
-                    if ("0" == webdentaku.buff) {
-                        var a = "0.";
-                        webdentaku.buff = a, addToDisplayFromBuff()
-                    } else if (e.match(/\./)) webdentaku.ans && (webdentaku.ans = !1, webdentaku.buff = "0.", addToDisplayFromBuff());
-                    else if (e.match(/\d$/)) {
-                        webdentaku.ans && (webdentaku.buff = "0", webdentaku.ans = !1);
-                        a = ".";
-                        webdentaku.buff += a, webdentaku.buff = webdentaku.buff.replace(/\s+0+(.*\.)$/, " $1"), addToDisplayFromBuff()
-                    } else {
-                        a = "0.";
-                        webdentaku.buff += a, addToDisplayFromBuff()
-                    }
-                }
+            function addOpe(e) {
+                "0" == webdentaku.buff || webdentaku.buff.match(/\d$/) && (webdentaku.ans = !1, _val = e.replace(/division/g, " / ").replace(/multiple/g, " * "), webdentaku.buff += _val, addToDisplayFromBuff()), changeDisplayFontSize(webdentaku.buff.length)
+            }
 
-                function addOpe(e) {
-                    "0" == webdentaku.buff || webdentaku.buff.match(/\d$/) && (webdentaku.ans = !1, _val = e.replace(/division/g, " / ").replace(/multiple/g, " * "), webdentaku.buff += _val, addToDisplayFromBuff()), changeDisplayFontSize(webdentaku.buff.length)
-                }
+            function getWords() {
+                return webdentaku.buff.replace("/s+$/", "").split(/\s+/)
+            }
 
-                function getWords() {
-                    return webdentaku.buff.replace("/s+$/", "").split(/\s+/)
-                }
+            function getLastWord() {
+                var e = getWords();
+                return e[e.length - 1]
+            }
 
-                function getLastWord() {
-                    var e = getWords();
-                    return e[e.length - 1]
-                }
+            function isWordOver() {
+                return getLastWord().length >= webdentaku.limit
+            }
 
-                function isWordOver() {
-                    return getLastWord().length >= webdentaku.limit
-                }
+            function addNum(e) {
+                if (e = e.replace(/,/g, ""), isWordOver()) {
+                    webdentaku.ans && (webdentaku.buff = e, addToDisplayFromBuff(), webdentaku.ans = !1);
+                    var a = "これ以上の文字入力には対応していません(" + webdentaku.limit + ")。( TДT)ｺﾞﾒﾝﾖｰ";
+                    alert(a)
+                } else webdentaku.ans && (webdentaku.buff = "0", webdentaku.ans = !1), "0" == webdentaku.buff ? (webdentaku.buff = e, addToDisplayFromBuff()) : (webdentaku.buff += e, addToDisplayFromBuff());
+                changeDisplayFontSize(webdentaku.buff.length), webdentaku.buff = webdentaku.buff.replace(/\s+0+$/, " ")
+            }
 
-                function addNum(e) {
-                    if (e = e.replace(/,/g, ""), isWordOver()) {
-                        webdentaku.ans && (webdentaku.buff = e, addToDisplayFromBuff(), webdentaku.ans = !1);
-                        var a = "これ以上の文字入力には対応していません(" + webdentaku.limit + ")。( TДT)ｺﾞﾒﾝﾖｰ";
-                        alert(a)
-                    } else webdentaku.ans && (webdentaku.buff = "0", webdentaku.ans = !1), "0" == webdentaku.buff ? (webdentaku.buff = e, addToDisplayFromBuff()) : (webdentaku.buff += e, addToDisplayFromBuff());
-                    changeDisplayFontSize(webdentaku.buff.length), webdentaku.buff = webdentaku.buff.replace(/\s+0+$/, " ")
-                }
+            function convertCalcMarkFromBuff() {
+                return webdentaku.buff.replace(/ \//g, " &#247;").replace(/ \*/g, " &#215;")
+            }
 
-                function convertCalcMarkFromBuff() {
-                    return webdentaku.buff.replace(/ \//g, " &#247;").replace(/ \*/g, " &#215;")
-                }
+            function addToDisplayFromBuff() {
+                var e = convertCalcMarkFromBuff();
+                e = addComma(e), $("#display").html(e)
+            }
 
-                function addToDisplayFromBuff() {
-                    var e = convertCalcMarkFromBuff();
-                    e = addComma(e), $("#display").html(e)
+            function addComma(e) {
+                for (var a = e.split(/\s+/), t = [], n = 0; n < a.length; n++) {
+                    var u = a[n];
+                    u = strToCommaNumber(u), t.push(u)
                 }
+                return t.join(" ")
+            }
 
-                function addComma(e) {
-                    for (var a = e.split(/\s+/), t = [], n = 0; n < a.length; n++) {
-                        var u = a[n];
-                        u = strToCommaNumber(u), t.push(u)
-                    }
-                    return t.join(" ")
-                }
+            function strToCommaNumber(e) {
+                var a, t = String(e).split(".");
+                return 2 == t.length ? (a = parseInt(t[0])).toLocaleString() + "." + t[1] : (a = parseInt(e)) ? a.toLocaleString() : e
+            }
 
-                function strToCommaNumber(e) {
-                    var a, t = String(e).split(".");
-                    return 2 == t.length ? (a = parseInt(t[0])).toLocaleString() + "." + t[1] : (a = parseInt(e)) ? a.toLocaleString() : e
-                }
-
-                function calc() {
-                    if (webdentaku.buff.match(/[\+\-\*\/].*\d$/)) {
-                        ans = eval(webdentaku.buff), webdentaku.buff.match(/\d.\d/) && (ans = Math.round(1e8 * ans) / 1e8);
-                        var historyId = makeHistoryId(),
-                            formula = convertCalcMarkFromBuff();
-                        if (appendHistory(historyId, formula, ans), appendLSHistory(historyId, formula, ans), historyScroll(), webdentaku.debug)
-                            for (var i = 0, len = localStorage.length; i < len; i++) {
-                                var key = localStorage.key(i),
-                                    val = localStorage[key];
-                                debugLog(key + " => " + val)
-                            }
-                        webdentaku.buff = String(ans), addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length), webdentaku.ans = !0
-                    }
-                }
-                $(function() {
-                    if (isWebStorage()) {
-                        for (var e = [], a = new RegExp("^[0-9]{13}$"), t = 0, n = localStorage.length; t < n; t++) {
-                            var u = localStorage.key(t),
-                                o = JSON.parse(localStorage[u]);
-                            a.test(u) && "historyId" in o && "formula" in o && "answer" in o && (e[t] = o)
+            function calc() {
+                if (webdentaku.buff.match(/[\+\-\*\/].*\d$/)) {
+                    ans = eval(webdentaku.buff), webdentaku.buff.match(/\d.\d/) && (ans = Math.round(1e8 * ans) / 1e8);
+                    var historyId = makeHistoryId(),
+                        formula = convertCalcMarkFromBuff();
+                    if (appendHistory(historyId, formula, ans), appendLSHistory(historyId, formula, ans), historyScroll(), webdentaku.debug)
+                        for (var i = 0, len = localStorage.length; i < len; i++) {
+                            var key = localStorage.key(i),
+                                val = localStorage[key];
+                            debugLog(key + " => " + val)
                         }
-                        e.sort(compareHistoryId);
-                        for (t = 0; t < e.length; t++) {
-                            u = e[t].historyId;
-                            var d = e[t].formula,
-                                r = e[t].answer;
-                            debugLog(u + " " + d + " " + r), appendHistory(u, d, r)
-                        }
-                        historyScroll()
+                    webdentaku.buff = String(ans), addToDisplayFromBuff(), changeDisplayFontSize(webdentaku.buff.length), webdentaku.ans = !0
+                }
+            }
+            $(function() {
+                if (isWebStorage()) {
+                    for (var e = [], a = new RegExp("^[0-9]{13}$"), t = 0, n = localStorage.length; t < n; t++) {
+                        var u = localStorage.key(t),
+                            o = JSON.parse(localStorage[u]);
+                        a.test(u) && "historyId" in o && "formula" in o && "answer" in o && (e[t] = o)
                     }
-                }), document.onkeydown = function(e) {
-                    var a = e.keyCode;
-                    e || (e = window.event), 48 == a ? addNum("0") : 49 == a ? addNum("1") : 50 == a ? addNum("2") : 51 == a ? addNum("3") : 52 == a ? addNum("4") : 53 == a ? addNum("5") : 54 == a ? addNum("6") : 55 == a ? addNum("7") : 56 == a ? addNum("8") : 57 == a ? addNum("9") : 187 == a ? addOpe(" + ") : 189 == a ? addOpe(" - ") : 222 == a ? addOpe("multiple") : 0 == a ? addOpe("division") : 190 == a ? addDot() : 13 == a && calc()
-                };
-            </script>
-
-            <!--以下はフッダー-->
-            <div class="footer">
-                ©2019-2020 Kota Misu
-            </div>
+                    e.sort(compareHistoryId);
+                    for (t = 0; t < e.length; t++) {
+                        u = e[t].historyId;
+                        var d = e[t].formula,
+                            r = e[t].answer;
+                        debugLog(u + " " + d + " " + r), appendHistory(u, d, r)
+                    }
+                    historyScroll()
+                }
+            }), document.onkeydown = function(e) {
+                var a = e.keyCode;
+                e || (e = window.event), 48 == a ? addNum("0") : 49 == a ? addNum("1") : 50 == a ? addNum("2") : 51 == a ? addNum("3") : 52 == a ? addNum("4") : 53 == a ? addNum("5") : 54 == a ? addNum("6") : 55 == a ? addNum("7") : 56 == a ? addNum("8") : 57 == a ? addNum("9") : 187 == a ? addOpe(" + ") : 189 == a ? addOpe(" - ") : 222 == a ? addOpe("multiple") : 0 == a ? addOpe("division") : 190 == a ? addDot() : 13 == a && calc()
+            };
+        </script>
+        <!--以下はフッダー-->
+        <div class="footer">
+            ©2019-2020 Kota Misu
         </div>
     </div>
-
 </body>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-    $(function() {
-        var aTags = $('a');
-        aTags.each(function() {
-            var url = $(this).attr('href');
-            $(this).removeAttr('href');
-            $(this).click(function() {
-                location.href = url;
-            });
-        });
-    });
-</script>
-
-<script>
-    //共通メニューバー
-    (function() {
-
-        var Menu = (function() {
-            var burger = document.querySelector('.burger');
-            var menu = document.querySelector('.menu_all');
-            var menuList = document.querySelector('.menu_all__list');
-            var brand = document.querySelector('.menu_all__brand');
-            var menuItems = document.querySelectorAll('.menu_all__item');
-
-            var active = false;
-
-            var toggleMenu = function() {
-                if (!active) {
-                    menu.classList.add('menu_all--active');
-                    menuList.classList.add('menu_all__list--active');
-                    brand.classList.add('menu_all__brand--active');
-                    burger.classList.add('burger--close');
-                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
-                        menuItems[i].classList.add('menu_all__item--active');
-                    }
-
-                    active = true;
-                } else {
-                    menu.classList.remove('menu_all--active');
-                    menuList.classList.remove('menu_all__list--active');
-                    brand.classList.remove('menu_all__brand--active');
-                    burger.classList.remove('burger--close');
-                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
-                        menuItems[i].classList.remove('menu_all__item--active');
-                    }
-
-                    active = false;
-                }
-            };
-
-            var bindActions = function() {
-                burger.addEventListener('click', toggleMenu, false);
-            };
-
-            var init = function() {
-                bindActions();
-            };
-
-            return {
-                init: init
-            };
-
-        }());
-
-        Menu.init();
-
-    }());
-</script>
 
 </html>

@@ -4,13 +4,30 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="layout.css" type="text/css">
-    <link rel="stylesheet" href="background1.css" type="text/css">
     <meta name="viewport" content="initial-scale=1.0">
     <title>このサイトについて</title>
 </head>
+<script>
+    /* ピッチインピッチアウトによる拡大縮小を禁止 */
+    document.documentElement.addEventListener('touchstart', function(e) {
+        if (e.touches.length >= 2) {
+            e.preventDefault();
+        }
+    }, {
+        passive: false
+    });
+    /* ダブルタップによる拡大を禁止 */
+    var t = 0;
+    document.documentElement.addEventListener('touchend', function(e) {
+        var now = new Date().getTime();
+        if ((now - t) < 350) {
+            e.preventDefault();
+        }
+        t = now;
+    }, false);
+</script>
 
-<body>
-    <canvas id="canvas"></canvas>
+<body oncontextmenu='return false;'>
     <section id="srap">
         &nbsp;
         <!--以下は明星中学・高等学校のロゴ兼リンク-->
@@ -21,9 +38,7 @@
         <!--以下はタイトル-->
         <div class="title-wrapper">
             <div class="title">
-                <div class="bounceInDown">
-                    このサイトについて
-                </div>
+                このサイトについて
             </div>
         </div>
         &nbsp;
@@ -31,19 +46,14 @@
             まずはじめに...
         </div>
         <div class="text">
-            一部のコンテンツは学校より配布されたGoogle Account(G Suite for Education)でログインする必要があります。
-            <br>Google classroomやその他Googleサービスは教育機関向けに無償で提供されています。
-            <br>Google Accountでログインしていても、Google Formsの集計者側で回答者の氏名やアカウント名を閲覧することはできません。よって投書箱の匿名性は確保されています。
-            <br>
-            <br>このサイトの利用を始める前に必ず
-            <a href="https://accounts.google.com/ServiceLogin" target="_blank" rel=“noopener style="font-size: 30px;">ここ</a>からGoogleにログインしてください。
-            <br>
-            <br>＜追記事項＞
-            <br>今後(2021年度予定)、複数コンテンツを追加、更新していく予定です。是非、情報の授業等で役立ててください。
-            <br>追加コンテンツは現状以下の予定です。
-            <br>・インターネットについて(主にWEB)
-            <br>・サイトの作り方(基礎的なHTMLと他)
-            <br>
+            <p>
+                一部のコンテンツは学校より配布されたGoogle Account(G Suite for Education)でログインする必要があります。
+                <br>Google classroomやその他Googleサービスは教育機関向けに無償で提供されています。
+                <br>Google Accountでログインしていても、Google Formsの集計者側で回答者の氏名やアカウント名を閲覧することはできません。よって投書箱の匿名性は確保されています。
+                <br>
+                <br>このサイトの利用を始める前に必ず
+                <a href="https://accounts.google.com/ServiceLogin" target="_blank" rel=“noopener style="font-size: 30px;">ここ</a>からGoogleにログインしてください。
+            </p>
         </div>
         &nbsp;
         <div class="header">
@@ -114,7 +124,7 @@
             <br>2020/09/13 Ver.5.5として機能の拡充
             <br>　　　　　　　　　　⇒著作権切れ作品の閲覧機能の追加(青空文庫より)、検索窓の追加
             <br>2020/09/27 Ver.5.6として更新、このversionよりホーム画面追加はiPadOS13以降推奨(現行Ver)
-            <br>　　　　　　　　　　⇒動作の軽量化、サイト遷移方法の見直し
+            <br>　　　　　　　　　　⇒動作の軽量化、サイト遷移方法の見直し、添削
             <br>
             <br>今後も気が向いたときに更新！
         </div>
@@ -136,72 +146,5 @@
         </div>
     </section>
 </body>
-<script>
-    //背景(canvas)
-    var livePatern = {
-        canvas: null,
-        context: null,
-        cols: 0,
-        rows: 0,
-        colors: [252, 251, 249, 248, 241, 240],
-        triangleColors: [],
-        destColors: [],
-        init: function() {
-            this.canvas = document.getElementById('canvas');
-            this.context = this.canvas.getContext('2d');
-            this.cols = Math.floor(document.body.clientWidth / 24);
-            this.rows = Math.floor(document.body.clientHeight / 24) + 1;
-            this.canvas.width = document.body.clientWidth;
-            this.canvas.height = document.body.clientHeight;
-            this.drawBackground();
-            this.animate();
-        },
-        drawTriangle: function(x, y, color, inverted) {
-            inverted = inverted == undefined ? false : inverted;
-            this.context.beginPath();
-            this.context.moveTo(x, y);
-            this.context.lineTo(inverted ? x - 22 : x + 22, y + 11);
-            this.context.lineTo(x, y + 22);
-            this.context.fillStyle = "rgb(" + color + "," + color + "," + color + ")";
-            this.context.fill();
-            this.context.closePath();
-        },
-        getColor: function() {
-            return this.colors[(Math.floor(Math.random() * 6))];
-        },
-        drawBackground: function() {
-            var eq = null;
-            var x = this.cols;
-            var destY = 0;
-            var color, y;
-            while (x--) {
-                eq = x % 2;
-                y = this.rows;
-                while (y--) {
-                    destY = Math.round((y - 0.5) * 24);
-                    this.drawTriangle(x * 24 + 2, eq == 1 ? destY : y * 24, this.getColor());
-                    this.drawTriangle(x * 24, eq == 1 ? destY : y * 24, this.getColor(), true);
-                }
-            }
-        },
-        animate: function() {
-            var me = this;
-            var x = Math.floor(Math.random() * this.cols);
-            var y = Math.floor(Math.random() * this.rows);
-            var eq = x % 2;
-            if (eq == 1) {
-                me.drawTriangle(x * 24, Math.round((y - 0.5) * 24), this.getColor(), true);
-            } else {
-                me.drawTriangle(x * 24 + 2, y * 24, this.getColor());
-            }
-            setTimeout(function() {
-                me.animate.call(me);
-            }, 10);
-        },
-    };
-    ! function() {
-        livePatern.init();
-    }()
-</script>
 
 </html>

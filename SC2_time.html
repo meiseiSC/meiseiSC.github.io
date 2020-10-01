@@ -4,170 +4,70 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="layout.css" type="text/css">
-    <link rel="stylesheet" href="background3.css" type="text/css">
     <link rel="stylesheet" href="menu_bar2.css" type="text/css">
-    <link rel="stylesheet" href="menu_all.css" type="text/css">
     <link rel="stylesheet" href="clock.css" type="text/css">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="initial-scale=1.0">
     <title>アナログ時計</title>
-    <link rel="shortcut icon" href="icon/webclip-meisei.ico">
-    <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-128.ico">
 </head>
+<script>
+    /* ピッチインピッチアウトによる拡大縮小を禁止 */
+    document.documentElement.addEventListener('touchstart', function(e) {
+        if (e.touches.length >= 2) {
+            e.preventDefault();
+        }
+    }, {
+        passive: false
+    });
+    /* ダブルタップによる拡大を禁止 */
+    var t = 0;
+    document.documentElement.addEventListener('touchend', function(e) {
+        var now = new Date().getTime();
+        if ((now - t) < 350) {
+            e.preventDefault();
+        }
+        t = now;
+    }, false);
+</script>
 
 <body oncontextmenu='return false;'>
-    <!--共通メニューバー-->
-    <header class="main_menu">
-        <div class="burger">
-            <div class="burger__patty"></div>
-            <div class="burger__patty"></div>
-            <div class="burger__patty"></div>
-        </div>
-
-        <nav class="menu_all">
-            <div class="menu_all__brand">
-                <div class="logo"><img src="icon/meisei.png"></div>
-            </div>
-            <ul class="menu_all__list">
-                <li class="menu_all__item">
-                    <a href="SC1_tousyo.html" class="menu_all__link">
-                    投書箱
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="SC1_radio.html" class="menu_all__link">
-                    明星昼らじ！
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="SC2_dentaku.html" class="menu_all__link">
-                    WEB電卓
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="menu_all__link">
-                    生徒会新聞
-                </a>
-                </li>
-                <li class="menu_all__item">
-                    <a href="admin.html" class="menu_all__link ">
-                    このサイトについて
-                </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div id="content">
-        <div id="srap">
-            &nbsp;
-            <!--以下は明星中学・高等学校のロゴ兼リンク-->
-            <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
-                <img src="https://www.meisei.ac.jp/assets/img/hs/common/logo_hs.svg" width="300">
-            </a>
-            &nbsp;
-            <!--以下はタイトル-->
-            <div class="title-wrapper">
-                <div class="title">
-                    <div class="bounceInDown">
-                        アナログ時計
-                    </div>
+    <div id="srap">
+        &nbsp;
+        <!--以下は明星中学・高等学校のロゴ兼リンク-->
+        <a href="https://www.meisei.ac.jp/hs" target=“_blank” rel=“noopener”>
+            <img src="https://www.meisei.ac.jp/assets/img/hs/common/logo_hs.svg" width="300">
+        </a>
+        &nbsp;
+        <!--以下はタイトル-->
+        <div class="title-wrapper">
+            <div class="title">
+                <div class="bounceInDown">
+                    アナログ時計
                 </div>
             </div>
-            <!--トップメニューバー-->
-            <ul class="topnav">
-                <li><a href="SC2_link.html">リンク集</a></li>
-                <li><a href="SC2_dentaku.html">WEB電卓</a></li>
-                <li><a class="active" href="SC2_time.html">アナログ時計</a></li>
-            </ul>
-            <!--以下はアナログ時計-->
-            <div class="header">
-                アナログ時計です
-            </div>
-            &nbsp;
-            <div id="clock">
-                <img src="clock.png" width="700">
-                <div id="hour-hand"></div>
-                <div id="minute-hand"></div>
-                <div id="second-hand"></div>
-            </div>
-            <!--以下はヘッダー-->
-            <div class="footer">
-                ©2019-2020 Kota Misu
-            </div>
         </div>
+        <!--トップメニューバー-->
+        <ul class="topnav">
+            <li><a href="SC2_link.html">リンク集</a></li>
+            <li><a href="SC2_dentaku.html">WEB電卓</a></li>
+            <li><a class="active" href="SC2_time.html">アナログ時計</a></li>
+        </ul>
+        <!--以下はアナログ時計-->
+        <div class="header">
+            アナログ時計です
+        </div>
+        &nbsp;
+        <div id="clock">
+            <img src="clock.png" width="700">
+            <div id="hour-hand"></div>
+            <div id="minute-hand"></div>
+            <div id="second-hand"></div>
+        </div>
+        <!--以下はヘッダー-->
+        <div class="footer">
+            ©2019-2020 Kota Misu
+        </div>
+    </div>
 </body>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-    $(function() {
-        var aTags = $('a');
-        aTags.each(function() {
-            var url = $(this).attr('href');
-            $(this).removeAttr('href');
-            $(this).click(function() {
-                location.href = url;
-            });
-        });
-    });
-</script>
-
-<script>
-    //共通メニューバー
-    (function() {
-
-        var Menu = (function() {
-            var burger = document.querySelector('.burger');
-            var menu = document.querySelector('.menu_all');
-            var menuList = document.querySelector('.menu_all__list');
-            var brand = document.querySelector('.menu_all__brand');
-            var menuItems = document.querySelectorAll('.menu_all__item');
-
-            var active = false;
-
-            var toggleMenu = function() {
-                if (!active) {
-                    menu.classList.add('menu_all--active');
-                    menuList.classList.add('menu_all__list--active');
-                    brand.classList.add('menu_all__brand--active');
-                    burger.classList.add('burger--close');
-                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
-                        menuItems[i].classList.add('menu_all__item--active');
-                    }
-
-                    active = true;
-                } else {
-                    menu.classList.remove('menu_all--active');
-                    menuList.classList.remove('menu_all__list--active');
-                    brand.classList.remove('menu_all__brand--active');
-                    burger.classList.remove('burger--close');
-                    for (var i = 0, ii = menuItems.length; i < ii; i++) {
-                        menuItems[i].classList.remove('menu_all__item--active');
-                    }
-
-                    active = false;
-                }
-            };
-
-            var bindActions = function() {
-                burger.addEventListener('click', toggleMenu, false);
-            };
-
-            var init = function() {
-                bindActions();
-            };
-
-            return {
-                init: init
-            };
-
-        }());
-
-        Menu.init();
-
-    }());
-</script>
 
 <script>
     //時計JS// 現在時刻の設定

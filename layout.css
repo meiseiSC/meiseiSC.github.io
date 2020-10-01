@@ -12,6 +12,8 @@
         }
         
         body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
             font-family: 'Arial', YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ ゴシック', sans-serif;
         }
         
@@ -41,9 +43,8 @@
         #srap {
             margin: 0 auto;
             width: 750px;
-            font-family: 'Arial', YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ ゴシック', sans-serif;
         }
-        /*ホームページ幅・フォント指定*/
+        /*ホームページ幅*/
         
         .title-wrapper {
             display: block;
@@ -81,65 +82,6 @@
         }
         /*ページタイトル用*/
         
-        .mainmenu {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bolder;
-        }
-        
-        .mainmenu .bar {
-            width: 300px;
-            height: 50px;
-            margin: 10px 0;
-        }
-        
-        .mainmenu .bar {
-            animation: show-bar .3s linear .9s forwards;
-        }
-        
-        @keyframes show-bar {
-            from {
-                width: 0;
-                background-color: #eee;
-            }
-            to {
-                width: 330px;
-                background-color: #0000cd;
-            }
-        }
-        /*ホームメニューバー*/
-        
-        .mainmenu_title {
-            color: #ffffff;
-            opacity: 0;
-        }
-        
-        .mainmenu_title {
-            -webkit-animation: example 1s ease 0s 1 forwards;
-            animation: example 1s ease 0s 1 forwards;
-        }
-        
-        @-webkit-keyframes example {
-            100% {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes example {
-            100% {
-                opacity: 1;
-            }
-        }
-        /*メインメニューのテキスト表示*/
-        
         .footer {
             padding: 0.5em 1em;
             margin: 2em 0;
@@ -166,29 +108,6 @@
         }
         /*form管理者用ボタン*/
         
-        .home_btn {
-            display: inline-block;
-            text-decoration: none;
-            background: #87befd;
-            color: #FFF;
-            width: 120px;
-            height: 120px;
-            line-height: 120px;
-            text-align: center;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0px 0px 0px 5px #87befd;
-            border: dashed 2px #FFF;
-            transition: .4s;
-            position: fixed;
-            right: 30px;
-            bottom: 50px;
-            transition: 1s;
-            opacity: 0.8;
-            z-index: 10;
-        }
-        /*ホームボタン*/
-        
         .header {
             height: 20px;
             width: 500px;
@@ -196,8 +115,8 @@
             font-size: 0.85em;
             padding: 0.5em;
             color: #010101;
-            background: #eaf3ff;
-            border-bottom: solid 3px #516ab6;
+            background: #e8d6d1;
+            border-bottom: solid 3px #4d1b1b;
         }
         /*ヘッダー・タイトルに使用*/
         
@@ -212,7 +131,7 @@
             padding: 0.25em 1em;
             margin: 2em 0;
             top: 0;
-            background: #efefef;
+            background: #efefefb6;
         }
         
         .text:before,
