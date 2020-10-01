@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-128.ico">
 </head>
 <script>
-    /* ピッチインピッチアウトによる拡大縮小を禁止 */
+    //ピッチインピッチアウトによる拡大縮小を禁止
     document.documentElement.addEventListener('touchstart', function(e) {
         if (e.touches.length >= 2) {
             e.preventDefault();
@@ -21,7 +21,7 @@
     }, {
         passive: false
     });
-    /* ダブルタップによる拡大を禁止 */
+    //ダブルタップによる拡大を禁止
     var t = 0;
     document.documentElement.addEventListener('touchend', function(e) {
         var now = new Date().getTime();
@@ -138,7 +138,7 @@
                 </a>
                 </li>
                 <li class="menu_all__item">
-                    <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="menu_all__link" target="SC">
+                    <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="menu_all__link" target=“_blank” rel=“noopener”>
                     生徒会新聞
                 </a>
                 </li>

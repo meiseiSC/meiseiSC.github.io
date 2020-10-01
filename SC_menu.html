@@ -7,6 +7,25 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>生徒会</title>
 </head>
+<script>
+    //ピッチインピッチアウトによる拡大縮小を禁止
+    document.documentElement.addEventListener('touchstart', function(e) {
+        if (e.touches.length >= 2) {
+            e.preventDefault();
+        }
+    }, {
+        passive: false
+    });
+    //ダブルタップによる拡大を禁止
+    var t = 0;
+    document.documentElement.addEventListener('touchend', function(e) {
+        var now = new Date().getTime();
+        if ((now - t) < 350) {
+            e.preventDefault();
+        }
+        t = now;
+    }, false);
+</script>
 <style>
     #sbox {
         position: absolute;
@@ -88,7 +107,7 @@
             </a>
         </div>
         <div class="mainmenu">
-            <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="bar">
+            <a href="https://hackmd.io/@MEISEI-SC/meiseiSC_news" class="bar" target=“_blank” rel=“noopener”>
                 <div class="mainmenu_title">生徒会通信</div>
             </a>
         </div>
@@ -137,19 +156,5 @@
         </a>
     </section>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-    $(function() {
-        var aTags = $('a');
-        aTags.each(function() {
-            var url = $(this).attr('href');
-            $(this).removeAttr('href');
-            $(this).click(function() {
-                location.href = url;
-            });
-        });
-    });
-</script>
 
 </html>
