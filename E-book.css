@@ -1,6 +1,4 @@
 body {
-    margin: 0 auto;
-    width: 900px;
     font-family: 'Arial', YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ ゴシック', sans-serif;
     background-color: #333;
 }
@@ -9,6 +7,10 @@ body {
 /*電子本レイアウト*/
 
 .flipbook-viewport {
+    margin: 0, auto;
+    position: absolute;
+    top: 50px;
+    left: 5%;
     overflow: hidden;
     position: fixed;
     width: 100%;
