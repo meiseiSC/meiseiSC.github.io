@@ -127,7 +127,7 @@
             </a>
         </div>
         &nbsp;
-        <iframe src="https://hackmd.io/@MEISEI-SC/MEISEISC_topics" loading="lazy" width="750" height="350" frameborder="0 " marginheight="0 " marginwidth="0 "></iframe> &nbsp;
+        <iframe class="hackmd" data-src="https://hackmd.io/@MEISEI-SC/MEISEISC_topics" width="750" height="350" frameborder="0 " marginheight="0 " marginwidth="0 "></iframe> &nbsp;
         <center>
             <div class="header">学習サポート</div>
         </center>
@@ -156,6 +156,17 @@
             </div>
         </a>
     </section>
+    <script>
+        function defer() {
+            var iframes = document.querySelectorAll('.hackmd');
+            iframes.forEach(function(iframe) {
+                if (iframe.getAttribute('data-src')) {
+                    iframe.setAttribute('src', iframe.getAttribute('data-src'));
+                }
+            });
+        }
+        window.addEventListener('load', defer);
+    </script>
 </body>
 
 </html>
